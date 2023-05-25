@@ -1,24 +1,126 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many : shares
+- has_many : questions
+- has_many : comments
+- has_many : answers
+- has_many : rooms, through: :room_users
+- has_many : messages
 
-* Configuration
+<!-- imageはActiveStorage -->
 
-* Database creation
+## shares テーブル
 
-* Database initialization
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| category_id   | integer    | null: false,                   |
+| guess         | text       | null: false,                   |
+| solution      | text       | null: false,                   |
+| thought       | text       |                                |
+| user          | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to : user
+- has_many : comments
 
-* Deployment instructions
+<!-- - belongs_to :モデル名  ActiveHash用 -->
 
-* ...
+
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| comment | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| share   | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to : user
+- belongs_to : share
+
+
+## questions テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| category_id   | integer    | null: false,                   |
+| hypothesis    | text       | null: false,                   |
+| action        | text       |                                |
+| thought       | text       |                                |
+| user          | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to : user
+- has_many : answers
+
+<!-- - belongs_to : モデル名 ActiveHash用 -->
+
+## answers テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| answer  | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| question| references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to : user
+- belongs_to : question
+
+
+## rooms テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- has_many : room_users
+- has_many : users, through: :room_users
+- has_many : messages
+
+## room_users テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to : room
+- belongs_to : user
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to : room
+- belongs_to : user
