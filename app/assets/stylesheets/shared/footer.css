@@ -1,0 +1,19 @@
+ .footer {
+    width: 100vw;
+    padding: 5vh 0;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .logo-footer {
+    width: 20vh;
+    vertical-align: bottom;
+  }
+  
+  .right_footer {
+    font-size: 14px;
+    margin-left: 30px;
+  }
