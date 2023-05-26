@@ -5,7 +5,7 @@
   .top-page-header {
     width: 100vw;
     padding: 2vh 10vw;
-    /* position: fixed; */
+    /* position: fixed; あとで上部に固定できるようにする*/
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 0, 0, 0.7);
