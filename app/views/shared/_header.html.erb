@@ -1,0 +1,28 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), "#" %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <%# <% if user_signed_in? %>
+        <%# <li><%= link_to 'ユーザーの画像（image_tag)', "#", class: "user-nickname" %> </li> 
+      <%# <% else %> 
+        <li><%= link_to '共有する', "#", class: "share_post" %></li>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <%# <% end %>
+    </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', "#", class: "share_board" %></li>
+      <li><%= link_to '質問掲示板', "#", class: "question_board" %></li>
+      <li><%= link_to 'カテゴリーリスト', "#", class: "category-list" %></li>
+      <li><%= link_to 'ユーザーリスト', "#", class: "user-list" %></li>
+    </ul>
+  </div>
+</header>
