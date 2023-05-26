@@ -1,11 +1,11 @@
  .footer {
     width: 100vw;
     padding: 5vh 0;
-    color: #333333;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #333;
   }
   
   .logo-footer {
