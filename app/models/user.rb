@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :shares
+  has_many :comments
 end
