@@ -54,16 +54,23 @@
     <h2 class='title'>共有掲示板</h2>
     <div class='share-board-body'>
       <div class='share-board-left'>
-      <%# link toとかも後で全部やる %>
-      <%# <% @shares.each do |share| %>
-        <div class='share-board-article'>
-          <div class='share-board-title'>タイトル</div>
-          <div class='share-board-other'>
-            <div class='share-board-category'>カテゴリー</div>
-            <div class='share-board-author'>執筆者</div>
+      <% @shares.each do |share| %>
+        <%= link_to share_path(share.id) do %>
+          <div class='share-board-article'>
+            <div class='share-board-title'>
+              <%= share.title %>
+            </div>
+            <div class='share-board-other'>
+              <div class='share-board-category'>
+                <%= share.category.name %>
+              </div>
+              <div class='share-board-author'>
+                <%= share.user.nickname %>
+              </div>
+            </div>
           </div>
-        </div>
-        <%# <% end %>
+        <% end %>
+       <% end %>
       </div>
       <div class='share-board-right'>
       <%# 後でやる %>

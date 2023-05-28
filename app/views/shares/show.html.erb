@@ -1,0 +1,12 @@
+<%= @share.title %>
+<%= @share.category.name %>
+<%= @share.guess %>
+<%= @share.solution %>
+<%= @share.thought %>
+<%= @share.user.nickname %>
+
+<% if current_user.id == @share.user_id %>
+    <%= link_to "投稿内容の編集", edit_share_path(@share.id), method: :get, class: "item-red-btn" %>
+    <p class="or-text">or</p>
+    <%= link_to "投稿内容の削除", share_path(@share.id), method: :delete, class:"item-destroy" %>
+<% end %>

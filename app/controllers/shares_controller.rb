@@ -17,6 +17,29 @@ class SharesController < ApplicationController
     end
   end
 
+  def show
+    @share = Share.find(params[:id])
+  end
+
+  def edit
+    @share = Share.find(params[:id])
+  end
+
+  def update
+    @share = Share.find(params[:id])
+    if @share.update(share_params)
+      redirect_to share_path(@share.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    share = Share.find(params[:id])
+    share.destroy if current_user.id == share.user_id
+    redirect_to root_path
+  end
+
   private
 
   def share_params
