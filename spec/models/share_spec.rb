@@ -41,7 +41,7 @@ RSpec.describe Share, type: :model do
       it 'ユーザー情報がない場合は登録できない' do
         @share.user = nil
         @share.valid?
-        expect(@share.errors.full_messages).to include "User must exist"
+        expect(@share.errors.full_messages).to include 'User must exist'
       end
     end
   end
