@@ -9,10 +9,10 @@
     </form>
     <ul class='header-right'>
       <% if user_signed_in? %>
-        <li><%= link_to '共有する', "#", class: "share_post" %></li>
+        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
         <li><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %></li> 
       <% else %>
-        <li><%= link_to '共有する', "#", class: "share_post" %></li>
+        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
