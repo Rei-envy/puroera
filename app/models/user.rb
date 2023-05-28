@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :image,        presence: true
   
   has_one_attached :image
+  has_many :shares
 end
