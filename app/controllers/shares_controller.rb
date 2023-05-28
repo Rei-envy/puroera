@@ -19,6 +19,8 @@ class SharesController < ApplicationController
 
   def show
     @share = Share.find(params[:id])
+    @comment = Comment.new
+    @comments = @share.comments
   end
 
   def edit
