@@ -69,6 +69,15 @@
     padding: 0 10px;
     display: block;
   }
+
+  .question_post{
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
   
   .login {
     text-decoration: none;
@@ -101,6 +110,7 @@
     background-color: #16c0de;
   }
 
+  .question_post:hover,
   .share_post:hover,
   .login:hover,
   .sign-up:hover{
