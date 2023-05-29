@@ -49,12 +49,27 @@
     </ul>
   </div>
 
-  <%# 共有掲示板一覧表示をさせる部分 %>
-  <div class='share-board-main'>
+ <div class='share-board-main'>
     <h2 class='title'>共有掲示板</h2>
     <div class='share-board-body'>
       <div class='share-board-left'>
-      
+      <% @questions.each do |question| %>
+        <%= link_to question_path(question.id) do %>
+          <div class='share-board-article'>
+            <div class='share-board-title'>
+              <%= question.title %>
+            </div>
+            <div class='share-board-other'>
+              <div class='share-board-category'>
+                <%= question.category.name %>
+              </div>
+              <div class='share-board-author'>
+                <%= question.user.nickname %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+       <% end %>
       </div>
       <div class='share-board-right'>
       <%# 後でやる %>
