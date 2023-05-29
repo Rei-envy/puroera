@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
         if @comment.save
             redirect_to share_path(@comment.share_id)
         else
-            @prototype = @comment.share
+            @share = @comment.share
             @comments = @share.comments
             render "share/show"
         end
