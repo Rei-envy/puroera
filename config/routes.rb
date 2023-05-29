@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: :create
   end
-  resources :rooms, only: [:index, :new, :create, :destroy]
+  resources :rooms, only: [:index, :new, :create, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
 end
