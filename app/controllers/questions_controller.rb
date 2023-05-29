@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-    before_action :authenticate_user!, only: [:new]
+    before_action :authenticate_user!, only: [:new, :update, :edit, :destroy]
     def index
         @questions = Question.order('created_at DESC')
     end
@@ -15,6 +15,29 @@ class QuestionsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show
+        @question = Question.find(params[:id])
+    end
+
+    def edit
+        @question = Question.find(params[:id])
+    end
+
+    def update
+        @question = Question.find(params[:id])
+        if @question.update(question_params)
+            redirect_to question_path(@question.id)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        question = Question.find(params[:id])
+        question.destroy if current_user.id == question.user_id
+        redirect_to root_path
     end
 
     private

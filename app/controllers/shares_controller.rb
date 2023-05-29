@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :update, :edit, :destroy]
   def index
     @shares = Share.order('created_at DESC')
   end
