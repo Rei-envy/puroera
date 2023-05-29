@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :shares do
     resources :comments, only: :create
   end
-  resources :questions
+  resources :questions do
+    resources :answers, only: :create
+  end
 end
