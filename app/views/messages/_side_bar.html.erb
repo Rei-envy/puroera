@@ -2,7 +2,7 @@
     <div class="side-top">
         <div class="side-user">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
-            <%# <%= link_to current_user.nickname, edit__path(current_user) %>
+            <%= link_to current_user.nickname, user_path(current_user.id) %>
         </div>
         <div class="side-create">
             <%= link_to "チャットを作成する", new_room_path %>
