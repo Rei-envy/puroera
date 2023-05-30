@@ -13,4 +13,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :questions
   has_many :answers
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  has_many :messages
 end
