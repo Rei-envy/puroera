@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @nickname = current_user.nickname
     @user = User.find(params[:id])
+    @shares = @user.shares
   end
 end

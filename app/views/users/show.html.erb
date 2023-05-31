@@ -1,6 +1,6 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
-    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), "#" %>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
     <form class="search-form" action="#">
         <input class='input-box' placeholder='キーワードから探す'>
         <button class="search-button">
@@ -31,8 +31,34 @@
     </ul>
   </div>
 </header>
-
-<div class="contents row">
-  <p><%= @nickname %>さんのマイページ</p>
+<%# <%= @nickname %>
+<div class="mypage-body">
+  <div class="mypage-left">
+    <div class="mypage-profile">
+      <%= image_tag @user.image, class:"mypage-image" %>
+      <div class="mypage-nickname">
+        <%= @user.nickname %>
+      </div>
+      <%# 投稿数などの情報を入れたい %>
+      <div class='chatroom-btn'>
+        <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
+      </div>
+    </div>
+  </div>
+  <div class="mypage-right">
+    <div class="mypage-share-post">
+      <h1>共有掲示板投稿一覧</h1>
+      <% @shares.each do |share| %>
+        <div class="card">
+          <div class="card__body">
+            <%= link_to share.title, share_path(share.id), class: :card__title%>
+            <p class="card__summary">
+              <%= l share.created_at %>
+            </p> 
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="mypage-question-post"></div>
+  </div>
 </div>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
