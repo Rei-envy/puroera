@@ -22,9 +22,9 @@
   }
 
   .form-wrap {
-    width: 80%;
+    width: 70%;
     background-color: white;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
     margin-bottom: 30px;
   }
   
@@ -34,11 +34,26 @@
     text-align: center;
     font-size: 22px;
   }
+
+  .preview-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-top: 10px;
+  }
+
+  .img-upload{
+    text-align: center;
+  }
   
   .form-header-text {
     line-height: 100px;
     border-bottom: 1px solid #f5f5f5;
     font-weight: bold;
+    font-size: 25px;
+    color: #16c0de;
   }
 
   .indispensable{
@@ -54,6 +69,7 @@
     align-items: center;
     border-radius: 4px;
     border: 1px solid #ccc;
+    margin-top: 15px;
   }
 
   .form-input-image{
@@ -62,7 +78,6 @@
     padding: 10px;
     opacity: 50%;
     margin: 0 5px;
-    
   }
 
   .input-default {
@@ -78,7 +93,7 @@
   }
   
   .form-group {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -100,67 +115,15 @@
     font-weight: bold;
   }
   
-  
-  
+  .field_with_errors {
+    display: contents;
+  }
+
   .info-text {
     color: #888;
     font-size: 15px;
     margin-top: 3px;
   }
-  
-  .form-info-header {
-    font-weight: bold;
-  }
-  
-  .form-info-text {
-    font-size: 15px;
-  }
-  
-  .input-name-wrap {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .input-name {
-    width: 130px;
-    margin: 5px 20px 0 20px;
-    height: 48px;
-    line-height: 30px;
-    padding: 10px 16px 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
-    font-size: 14px;
-    resize: none;
-  }
-  
-  .input-birth-wrap {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .input-birth-wrap select {
-    width: 75px;
-    margin-top: 5px;
-    height: 45px;
-    padding-left: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
-    font-size: 12px;
-    cursor: pointer;
-  }
-  
-  .input-birth-wrap p {
-    line-height: 60px;
-    padding: 0 5px;
-  }
-  
-  .field_with_errors {
-    display: contents;
-  }
-  
   
   .form-bottom-text {
     font-size: 15px;
@@ -180,19 +143,9 @@
   
   .register-btn {
     width: 50%;
-    margin: 20px auto 0;
+    margin: 30px auto 0;
   }
   
-  .register-red-btn {
-    width: 100%;
-    background: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
-    line-height: 48px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-
   .register-blue-btn {
     display: block;
     width: 100%;
@@ -200,7 +153,7 @@
     text-decoration: none;
     padding: 20px 40px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     border: 2px solid #27acd9;
     background: #27acd9;
     color: #fff;
