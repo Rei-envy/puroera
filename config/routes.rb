@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root  'shares#index'
-  resources :users, only: :show
+  resources :users, only: [:index, :show]
   resources :shares do
     resources :comments, only: :create
   end
