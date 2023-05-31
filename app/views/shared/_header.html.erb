@@ -21,10 +21,11 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to '共有掲示板', root_path, class: "share_board" %></li>
-      <li><%= link_to '質問掲示板', questions_path, class: "question_board" %></li>
-      <li><%= link_to 'ユーザーリスト', users_path, class: "user-list" %></li>
-      <li><%= link_to 'マイチャット', rooms_path, class: "category-list" %></li>
+      <li><%= link_to '共有掲示板', root_path, class: "current_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+      <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
     </ul>
   </div>
 </header>
