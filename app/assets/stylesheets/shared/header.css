@@ -97,6 +97,15 @@
     display: block;
   }
 
+  .logout {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+
   .user-nickname {
     width: 40px;
     height: 40px;
@@ -112,6 +121,7 @@
 
   .question_post:hover,
   .share_post:hover,
+  .logout:hover,
   .login:hover,
   .sign-up:hover{
     border-bottom: solid 2px white;
