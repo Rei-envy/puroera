@@ -1,4 +1,4 @@
-.registration-main {
+  .registration-main {
     width: 100%;
     min-width: 800px;
     height: 100%;
@@ -6,8 +6,8 @@
     display: flex;
     justify-content: center;
   }
-
-  .second-header {
+ 
+ .second-header {
     width: 100%;
     min-width: 800px;
     height: 80px;
