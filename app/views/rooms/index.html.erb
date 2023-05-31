@@ -14,7 +14,6 @@
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
       <% else %>
-        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
@@ -25,8 +24,10 @@
       <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
       <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
       <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
-      <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
-      <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% end %>
     </ul>
   </div>
 </header>
