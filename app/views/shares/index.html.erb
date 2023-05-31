@@ -54,33 +54,43 @@
     <h2 class='title'>共有掲示板</h2>
     <div class='share-board-body'>
       <div class='share-board-left'>
+      <%# <% count = 0 %>
       <% @shares.each do |share| %>
-        <%= link_to share_path(share.id) do %>
           <div class='share-board-article'>
             <div class='share-board-title'>
-              <%= share.title %>
+              <%= link_to share.title, share_path(share.id)  %>
             </div>
+            <p class="share-board-category">
+              <%= share.category.name %>
+            </p>
             <div class='share-board-other'>
-              <div class='share-board-category'>
-                <%= share.category.name %>
+              <div class='share-board-time'>
+                <%= l share.created_at %>
               </div>
               <div class='share-board-author'>
-                <%= share.user.nickname %>
+                  <div>
+                    <%= image_tag share.user.image, class:'share-board-author-image' %>
+                  </div>
+                  <div class='share-board-author-name'>
+                    <%= link_to user_path(share.user.id) do%>
+                      <%= share.user.nickname %>
+                    <% end %>
+                  </div>
               </div>
             </div>
           </div>
-        <% end %>
+          <%# <% count = count + 1 %> 
        <% end %>
       </div>
       <div class='share-board-right'>
       <%# 後でやる %>
+        <%# <p>投稿数は<%= count %>
         <div class='board-category'>カテゴリー</div>
         <div class='board-user'>ユーザー</div>
       </div>
     </div>
   </div>
 </div>
-
 
 <%# 上部の実装後に入れる %>
 <%= render "shared/footer" %>

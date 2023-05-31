@@ -125,7 +125,7 @@ a {
   
   .share-board-main{
     padding: 5vh 8vw;
-    background-color: white;
+    background: #f9f9f9;
   }
 
   .share-board-main>.title {
@@ -153,25 +153,54 @@ a {
   }
 
   .share-board-left{
-    width: 100%;
+    width: 80%;
   }
 
   .share-board-article{
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0 0 10px;
+    width: 90%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    border: 2px solid #27acd9;
+    border: 1px solid #27acd9;
   }
 
   .share-board-title{
-    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .share-board-category{
+    margin: 5px 0;
   }
 
   .share-board-other{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  .share-board-author{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .share-board-author-image{
+    width: 20px;
+    margin-right: 5px;
+  }
+
+  .share-board-author-name{
+    text-decoration: none;
+    color: #333;
+  }
+
+  .share-board-author-name:hover{
+    border-bottom: 1px solid #27acd9;
+    color: #3ccace;
   }
 
   .share-board-right{
