@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Answer, type: :model do
   before do
     @user = FactoryBot.create(:user)
-    @question = FactoryBot.create(:question,user_id: @user.id)
-    @answer = FactoryBot.build(:answer,user_id: @user.id, question_id: @question.id)
+    @question = FactoryBot.create(:question, user_id: @user.id)
+    @answer = FactoryBot.build(:answer, user_id: @user.id, question_id: @question.id)
   end
 
   describe '回答の保存' do

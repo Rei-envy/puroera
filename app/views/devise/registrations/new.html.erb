@@ -1,4 +1,8 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<header class='second-header'>
+  <%= link_to image_tag("puroera_header.png", class:"second-logo"), root_path %>
+</header>
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', id: 'registration_new', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -10,48 +14,53 @@
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group">
-  <div class="img-upload">
-      <div class="weight-bold-text">
-        ユーザーアイコン画像
-        <span class="indispensable">必須</span>
-      </div>
+    <div class="img-upload">
+      <div id="previews"></div>
       <div class="click-upload">
-        <%= f.file_field :image, id:"item-image" %>
+        <div class='form-input-text'>
+          <%= image_tag 'image.png', class:"form-input-image" %>
+          <%= f.file_field :image, id:"item-image", class:"input-default"%>
+        </div>
       </div>
     </div>
-    <div class='form-text-wrap'>
-      <label class="form-text">ニックネーム</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"ユーザー名", maxlength:"40" %>
   </div>
   <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">メールアドレス</label>
-      <span class="indispensable">必須</span>
+    <div class='form-input-text'>
+      <%= image_tag 'user.png', class:"form-input-image" %>
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"ユーザー名", maxlength:"40" %>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス", autofocus: true %>
   </div>
   <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">パスワード</label>
-      <span class="indispensable">必須</span>
+    <div class='form-input-text'>
+      <%= image_tag 'mail.png', class:"form-input-image" %>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス", autofocus: true %>
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード" %>
-    <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
   </div>
   <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">パスワード(確認)</label>
-      <span class="indispensable">必須</span>
+    <div class='form-input-text'>
+      <%= image_tag 'password.png', class:"form-input-image" %>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード（半角英数6文字以上）" %>
     </div>
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"再確認用パスワード" %>
+  </div>
+  <div class="form-group">
+    <div class='form-input-text'>
+      <%= image_tag 'confirm.png', class:"form-input-image" %>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"確認用パスワード" %>
+    </div>
   </div>
   <div class='register-btn'>
     <%= f.submit "新規登録する" ,class:"register-blue-btn" %>
   </div>
+  <p class="already-get-text">アカウントをお持ちの方は<%= link_to 'ログイン', new_user_session_path %></p>
 </div>
 <% end %>
 
-
+<div class='second-footer'>
+  <div class="second_left_footer">
+    <%= link_to image_tag("puroera_header.png", class:"logo-footer"), root_path %>
+  </div>
+  <div class="second_right_footer">
+    <p>© PUROERA COPY RIGHT</p>
+  </div>
+</div>
 

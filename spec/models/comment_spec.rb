@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   before do
     @user = FactoryBot.create(:user)
-    @share = FactoryBot.create(:share,user_id: @user.id)
-    @comment = FactoryBot.build(:comment,user_id: @user.id, share_id: @share.id)
+    @share = FactoryBot.create(:share, user_id: @user.id)
+    @comment = FactoryBot.build(:comment, user_id: @user.id, share_id: @share.id)
   end
 
   describe 'コメントの保存' do

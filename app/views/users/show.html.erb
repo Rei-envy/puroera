@@ -1,4 +1,84 @@
-<div class="contents row">
-  <p><%= @nickname %>さんのマイページ</p>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
+        <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "current_view" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+<%# <%= @nickname %>
+<div class="mypage-body">
+  <div class="mypage-left">
+    <div class="mypage-profile">
+      <%= image_tag @user.image, class:"mypage-image" %>
+      <div class="mypage-nickname">
+        <%= @user.nickname %>
+      </div>
+      <%# 投稿数などの情報を入れたい %>
+      <div class='chatroom-btn'>
+        <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
+      </div>
+    </div>
+  </div>
+  <div class="mypage-right">
+  <%# コメントや回答したものも入れれたら入れたい %>
+    <div class="mypage-share-post">
+      <h2 class='title'>共有掲示板投稿一覧</h2>
+      <% @shares.each do |share| %>
+        <div class="card">
+          <div class="card_body">
+            <%= link_to share.title, share_path(share.id), class: :card_title %>
+            <p class="card_body_category">
+              <%= share.category.name %>
+            </p>
+            <p class="card__summary">
+              <%= l share.created_at %>
+            </p> 
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="mypage-question-post">
+      <h2 class='title'>質問掲示板投稿一覧</h2>
+        <% @questions.each do |question| %>
+          <div class="card">
+            <div class="card_body">
+              <%= link_to question.title, question_path(question.id), class: :card_title %>
+              <p class="card_body_category">
+                <%=question.category.name %>
+            </p>
+              <p class="card__summary">
+                <%= l question.created_at %>
+              </p> 
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <div class="mypage-question-post"></div>
+  </div>
 </div>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>

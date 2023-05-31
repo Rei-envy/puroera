@@ -23,16 +23,41 @@
     <ul class='lists-left'>
       <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
       <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
-      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "current_view" %></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
+        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
         <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
       <% end %>
     </ul>
   </div>
 </header>
-<div class='wrapper'>
-  <div class='side-bar'>
-    <%= render "messages/side_bar" %>
-  </div>
+<div class="user-list-body">
+  <h2 class='title'>ユーザーリスト</h2>
+  <ul class='user-lists'>
+    <% @users.each do |user| %>
+      <li class="user-list-card">
+        <%= link_to user_path(user.id) do %>
+          <div class="user-list-block">
+            <%= image_tag user.image, class:"user-list-image" %>
+            <div class="user-list-nickname">
+              <%= user.nickname %>
+            </div>
+          </div> 
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
+
+<%# <div class="mypage-profile">
+      <%# <%= image_tag @user.image, class:"mypage-image" %> 
+      <%# <div class="mypage-nickname"> %>
+        <%# <%= @user.nickname %>
+      <%# </div> %>
+  <%# </div> %>
+<%# <% @users.each do |user| %>
+<%# <%= image_tag user.image %>
+<%# <%= user.nickname %>
+<%# <%= user.email %>
+<%# <% end %>

@@ -4,7 +4,7 @@
   
   .top-page-header {
     width: 100vw;
-    padding: 2vh 10vw;
+    padding: 2vh 8vw;
     /* position: fixed; あとで上部に固定できるようにする*/
     display: flex;
     flex-direction: column;
@@ -97,6 +97,15 @@
     display: block;
   }
 
+  .logout {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+
   .user-nickname {
     width: 40px;
     height: 40px;
@@ -112,6 +121,7 @@
 
   .question_post:hover,
   .share_post:hover,
+  .logout:hover,
   .login:hover,
   .sign-up:hover{
     border-bottom: solid 2px white;
@@ -135,7 +145,7 @@
 
   /* ここは現在の表示ごとに変える */
 
-  .share_board{
+  .current_view{
     text-decoration: none;
     margin-right: 3vw;
     font-weight: bold;
@@ -144,9 +154,7 @@
     border-bottom: solid 2px white;
   }
 
-  .question_board,
-  .category-list,
-  .user-list
+  .other_view
    {
     text-decoration: none;
     font-weight: bold;
@@ -154,9 +162,7 @@
     color: #C0C0C0;
   }
 
-  .question_board:hover,
-  .category-list:hover,
-  .user-list:hover
+  .other_view:hover
   {
     color: white;
   }
