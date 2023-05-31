@@ -31,8 +31,31 @@
     </ul>
   </div>
 </header>
-ユーザーリストを表示
+<div class="user-list-body">
+  <h2 class='title'>ユーザーリスト</h2>
+  <ul class='user-lists'>
+    <% @users.each do |user| %>
+      <li class="user-list-card">
+        <%= link_to user_path(user.id) do %>
+          <div class="user-list-block">
+            <%= image_tag user.image, class:"user-list-image" %>
+            <div class="user-list-nickname">
+              <%= user.nickname %>
+            </div>
+          </div> 
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
+
+<%# <div class="mypage-profile">
+      <%# <%= image_tag @user.image, class:"mypage-image" %> 
+      <%# <div class="mypage-nickname"> %>
+        <%# <%= @user.nickname %>
+      <%# </div> %>
+  <%# </div> %>
 <%# <% @users.each do |user| %>
 <%# <%= image_tag user.image %>
 <%# <%= user.nickname %>
