@@ -46,11 +46,12 @@
     </div>
   </div>
   <div class="mypage-right">
+  <%# コメントや回答したものも入れれたら入れたい %>
     <div class="mypage-share-post">
       <h1>共有掲示板投稿一覧</h1>
       <% @shares.each do |share| %>
         <div class="card">
-          <div class="card__body">
+          <div class="card_body">
             <%= link_to share.title, share_path(share.id), class: :card__title%>
             <p class="card__summary">
               <%= l share.created_at %>
@@ -58,6 +59,19 @@
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="mypage-question-post">
+      <h1>質問掲示板投稿一覧</h1>
+        <% @questions.each do |question| %>
+          <div class="card">
+            <div class="card_body">
+              <%= link_to question.title, question_path(question.id), class: :card__title%>
+              <p class="card__summary">
+                <%= l question.created_at %>
+              </p> 
+            </div>
+          </div>
+        <% end %>
     </div>
     <div class="mypage-question-post"></div>
   </div>
