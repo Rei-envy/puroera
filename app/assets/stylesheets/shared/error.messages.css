@@ -1,0 +1,12 @@
+.error-alert {
+    display: flex;
+    justify-content: center;
+    margin: 2.5vh 0;
+  }
+  
+  .error-message {
+    font-size: 1.5vw;
+    list-style: square;
+    color: rgb(22, 192, 221);
+    font-weight: bold;
+  }
