@@ -28,5 +28,15 @@
   <div class='register-btn'>
     <%= f.submit "ログイン" ,class:"register-blue-btn" %>
   </div>
+  <p class="already-get-text">アカウントをお持ちの方は<%= link_to '新規登録', new_user_registration_path %></p>
 </div>
 <% end %>
+
+<div class='second-footer'>
+  <div class="second_left_footer">
+    <%= link_to image_tag("puroera_header.png", class:"logo-footer"), root_path %>
+  </div>
+  <div class="second_right_footer">
+    <p>© PUROERA COPY RIGHT</p>
+  </div>
+</div>
