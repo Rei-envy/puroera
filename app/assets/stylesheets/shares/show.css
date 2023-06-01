@@ -1,0 +1,99 @@
+.share-show-main{
+    padding: 5vh 10vw;
+    background-color: #f8f8f8;
+}
+
+.share-show-white{
+    border-radius: 10px;
+    background-color: white;
+    padding: 3vh 5vw;
+}
+
+.share-show-user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.share-show-image{
+    width: 10vh;
+    margin-right: 3vw;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: white;
+}
+
+.share_comments{
+    padding-top: 20px;
+    border-top: 2px solid #27acd9;
+}
+
+.comments_lists{
+    padding: 20px;
+}
+
+.comment-flex{
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+}
+
+.comment_user{
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-right: 20px;
+}
+
+.share-post-content{
+    margin-top: 10px;
+}
+
+.form_btn {
+    display: block;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px auto 0;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    color: #fff;
+    border-radius: 100vh;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .form_btn:hover {
+    color: #27acd9;
+    background: #fff;
+  }
+
+/* 詳細ページのみのヘッダー */
+
+.share-edit-btn {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+  
+  .share-destroy {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+
+  .share-edit-btn:hover,
+  .share-destroy:hover{
+    border-bottom: solid 2px #27acd9;
+    color: #27acd9;
+  }
