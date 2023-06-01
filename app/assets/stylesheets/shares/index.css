@@ -153,7 +153,7 @@ a {
   }
 
   .share-board-left{
-    width: 80%;
+    width: 75%;
   }
 
   .share-board-article{
@@ -162,7 +162,9 @@ a {
     margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid #27acd9;
+    background-color: white;
   }
+
 
   .share-board-title{
     text-decoration: none;
@@ -203,6 +205,73 @@ a {
     color: #3ccace;
   }
 
+  /* 右側の部分 */
+
   .share-board-right{
-    width: 20%;
+    width: 25%;
+  }
+
+  .board-category{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
+  .board-category>.title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #3ccace;
+  }
+
+  .category-number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .category-name{
+    line-height: 40px;
+  }
+
+  .category-image{
+    width: 30px;
+    padding: 3px;
+    margin-right: 10px;
+    line-height: 30px;
+  }
+
+  /* .category-post-number{
+    text-align: right;
+  } */
+
+  .user-number{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .board-user{
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
+  .board-user>.title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #3ccace;
+  }
+
+  .user-image-icon{
+    width: 30px;
+    padding: 3px;
+    margin-right: 10px;
+    line-height: 30px;
   }

@@ -2,6 +2,7 @@ class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :update, :edit, :destroy]
   def index
     @shares = Share.order('created_at DESC')
+    @users = User.order('created_at ASC')
   end
 
   def new

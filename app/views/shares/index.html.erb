@@ -84,9 +84,119 @@
       </div>
       <div class='share-board-right'>
       <%# 後でやる %>
-        <%# <p>投稿数は<%= count %>
-        <div class='board-category'>カテゴリー</div>
-        <div class='board-user'>ユーザー</div>
+        <div class='board-category'>
+          <h2 class='title'>カテゴリー</h2>
+          <ul>
+            <li class='category-number'>
+              <%= image_tag 'coding.png', class:'category-image' %>
+              <span class='category-name'>HTML/CSS</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'ruby.png', class:'category-image' %>
+              <span class='category-name'>Ruby</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'js.png', class:'category-image' %>
+              <span class='category-name'>JavaScript</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'php.png', class:'category-image' %>
+              <span class='category-name'>PHP</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'python.png', class:'category-image' %>
+              <span class='category-name'>Python</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'java.png', class:'category-image' %>
+              <span class='category-name'>Java</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-.png', class:'category-image' %>
+              <span class='category-name'>C++</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-sharp.png', class:'category-image' %>
+              <span class='category-name'>C#</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'letter-c.png', class:'category-image' %>
+              <span class='category-name'>C言語</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'code.png', class:'category-image' %>
+              <span class='category-name'>その他</span>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class='board-user'>
+          <h2 class='title'>ユーザー</h2>
+          <ul>
+            <% @users.each do |user| %>
+            <li class='user-number'>
+              <%= image_tag user.image, class:'user-image-icon' %>
+              <%= link_to user_path(user.id) do%>
+                <%= user.nickname %>
+              <% end %>
+              <div></div><div></div>
+              <div class="category-post-number">
+                1投稿
+                <%# <%= cagory-count1 %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
