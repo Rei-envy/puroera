@@ -20,7 +20,7 @@
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
-        <%= image_tag "share_error.png", class:"list-pict" %>
+        <%= image_tag "goodjob.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
           Solution!
         </h3>
@@ -38,12 +38,12 @@
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "receive_money.png", class:"list-pict" %>
+        <%= image_tag "share_error.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
-          Money!
+          Communicate!
         </h3>
         <p class='reason-list-description'>
-          回答しエラーを解決できるとお金を受け取れる。
+          ユーザー同士でチャットルームで会話ができる。
         </p>
       </li>
     </ul>
@@ -54,33 +54,160 @@
     <h2 class='title'>共有掲示板</h2>
     <div class='share-board-body'>
       <div class='share-board-left'>
+      <%  count_2 = 0
+          count_3 = 0
+          count_4 = 0
+          count_5 = 0 
+          count_6 = 0
+          count_7 = 0
+          count_8 = 0
+          count_9 = 0
+         count_10 = 0
+         count_11 = 0
+      %>
       <% @shares.each do |share| %>
-        <%= link_to share_path(share.id) do %>
           <div class='share-board-article'>
             <div class='share-board-title'>
-              <%= share.title %>
+              <%= link_to share.title, share_path(share.id)  %>
             </div>
+            <p class="share-board-category">
+              <%= share.category.name %>
+            </p>
             <div class='share-board-other'>
-              <div class='share-board-category'>
-                <%= share.category.name %>
+              <div class='share-board-time'>
+                <%= l share.created_at %>
               </div>
               <div class='share-board-author'>
-                <%= share.user.nickname %>
+                  <div>
+                    <%= image_tag share.user.image, class:'share-board-author-image' %>
+                  </div>
+                  <div class='share-board-author-name'>
+                    <%= link_to user_path(share.user.id) do%>
+                      <%= share.user.nickname %>
+                    <% end %>
+                  </div>
               </div>
             </div>
           </div>
-        <% end %>
+          <%  case share.category.id  
+              when 2
+                count_2 = count_2 + 1
+              when 3
+                count_3 = count_3 + 1
+              when 4
+                count_4 = count_4 + 1
+              when 5
+                count_5 = count_5 + 1
+              when 6
+                count_6 = count_6 + 1
+              when 7
+                count_7 = count_7 + 1
+              when 8
+                count_8 = count_8 + 1
+              when 9
+                count_9 = count_9 + 1
+              when 10
+                count_10 = count_10 + 1
+              when 11
+                count_11 = count_11 + 1
+              end
+          %> 
        <% end %>
       </div>
       <div class='share-board-right'>
       <%# 後でやる %>
-        <div class='board-category'>カテゴリー</div>
-        <div class='board-user'>ユーザー</div>
+        <div class='board-category'>
+          <h2 class='title'>カテゴリー</h2>
+          <ul>
+            <li class='category-number'>
+              <%= image_tag 'coding.png', class:'category-image' %>
+              <span class='category-name'>HTML/CSS</span>
+              <div class="category-post-number">
+                <%= count_2 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'ruby.png', class:'category-image' %>
+              <span class='category-name'>Ruby</span>
+              <div class="category-post-number">
+                <%= count_3 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'js.png', class:'category-image' %>
+              <span class='category-name'>JavaScript</span>
+              <div class="category-post-number">
+                <%= count_4 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'php.png', class:'category-image' %>
+              <span class='category-name'>PHP</span>
+              <div class="category-post-number">
+                <%= count_5 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'python.png', class:'category-image' %>
+              <span class='category-name'>Python</span>
+              <div class="category-post-number">
+                <%= count_6 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'java.png', class:'category-image' %>
+              <span class='category-name'>Java</span>
+              <div class="category-post-number">
+                <%= count_7 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-.png', class:'category-image' %>
+              <span class='category-name'>C++</span>
+              <div class="category-post-number">
+                <%= count_8 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-sharp.png', class:'category-image' %>
+              <span class='category-name'>C#</span>
+              <div class="category-post-number">
+                <%= count_9 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'letter-c.png', class:'category-image' %>
+              <span class='category-name'>C言語</span>
+              <div class="category-post-number">
+                <%= count_10 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'code.png', class:'category-image' %>
+              <span class='category-name'>その他</span>
+              <div class="category-post-number">
+                <%= count_11 %>投稿
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class='board-user'>
+          <h2 class='title'>ユーザー</h2>
+          <ul>
+            <% @users.each do |user| %>
+            <li class='user-number'>
+              <%= image_tag user.image, class:'user-image-icon' %>
+              <%= link_to user_path(user.id) do%>
+                <%= user.nickname %>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <%# 上部の実装後に入れる %>
 <%= render "shared/footer" %>
