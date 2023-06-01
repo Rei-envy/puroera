@@ -1,13 +1,78 @@
-<div class="contents row">
-  <div class="container">
-    <h3>投稿する</h3>
-    <%= form_with(model: @question, local: true) do |f| %>
-      <%= f.text_field :title, placeholder: "タイトル" %>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-      <%= f.text_area :hypothesis, placeholder: "仮説" %>
-      <%= f.text_area :action, placeholder: "やったこと" %>
-      <%= f.text_area :thought, placeholder: "感想" %>
-      <%= f.submit "SEND" %>
-    <% end %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
+        <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
   </div>
-</div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "current_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
+<%= form_with(model: @question, local: true) do |f| %>
+  <div class="share-post-main">
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'title.png', class:'share-post-image' %>
+        <h2 class='title'>質問したいエラーのタイトル</h2>
+      </div>
+      <%= f.text_field :title, placeholder: "例：undefined~のようなエラーが出た", class:"share-post-field" %>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'options-lines.png', class:'share-post-image' %>
+        <h2 class='title'>エラーのカテゴリー</h2>
+      </div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'hypothesis.png', class:'share-post-image' %>
+        <h2 class='title'>エラーが起きた状況と仮説</h2>
+      </div>
+      <%= f.text_area :hypothesis, placeholder: "例：エラーは〜の実装中に起き、原因は〜であると考えています。", class:"share-post-area" %>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'solution.png', class:'share-post-image' %>
+        <h2 class='title'>エラー解決のためにやってみたこと</h2>
+      </div>
+      <%= f.text_area :action, placeholder: "例：〜の記述を「 」と書き直したが、エラーは解消できなかった。", class:"share-post-area" %>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'thought-bubble.png', class:'share-post-image' %>
+        <h2 class='title'>感想</h2>
+      </div>
+      <%= f.text_area :thought, placeholder: "例：全然分かりません。誰か助けてください…", class:"share-post-area" %>
+    </div>
+    <%= f.submit "質問する",class:"question-submit-btn" %>
+  </div>
+<% end %>
+
+<%# 上部の実装後に入れる %>
+<%= render "shared/footer" %>
