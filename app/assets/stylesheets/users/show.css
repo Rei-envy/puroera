@@ -6,6 +6,7 @@
 
 .mypage-left{
     width: 30%;
+    height: 55vh;
     text-align: center;
     border-radius: 20px;
     margin-right: 5vw;
@@ -81,7 +82,7 @@
     content: '';
     width: 150px;
     height: 4px;
-    background-color: #804080;
+    background-color: #c080c0;
     position: absolute;
     bottom: -10px;
     left: 50%;

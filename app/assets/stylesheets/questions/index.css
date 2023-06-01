@@ -1,3 +1,5 @@
+/* 基本はshareと同じ。変更点のみ記述 */
+
 .question-title-contents {
     width: 100vw;
     height: 50vh;
@@ -21,8 +23,8 @@
     padding: 20px 40px;
     font-weight: bold;
     font-size: 25px;
-    border: 2px solid #804080;
-    background: #804080;
+    border: 2px solid #c080c0;
+    background: #c080c0;
     color: #fff;
     border-radius: 100vh;
     transition: 0.5s;
@@ -30,12 +32,12 @@
   }
 
   .question-btn-border:hover {
-    color: #804080;
+    color: #c080c0;
     background: #fff;
   }
 
   .question-service-contents{
-    text-shadow: 0 0 5px rgba(128,64,128, 0.9);
+    text-shadow: 0 0 5px rgba(192,128,192, 0.9);
   }
   
   .question-service-title {
@@ -49,7 +51,7 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 40px;
-    text-shadow: 0 0 5px rgba(128,64,128, 0.9);
+    text-shadow: 0 0 5px rgba(192,128,192, 0.9);
   }
 
   .share-board-main>.question-title {
@@ -64,7 +66,7 @@
     content: '';
     width: 150px;
     height: 4px;
-    background-color: #804080;
+    background-color: #c080c0;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -76,7 +78,7 @@
     padding: 10px 20px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 1px solid #804080;
+    border: 1px solid #c080c0;
     background-color: white;
   }
 
@@ -84,14 +86,14 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
-    border-bottom: 1px solid #804080;
+    border-bottom: 1px solid #c080c0;
   }
 
   .board-user>.question-title{
     text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
-    border-bottom: 1px solid #804080;
+    border-bottom: 1px solid #c080c0;
   }
 
 
@@ -104,8 +106,8 @@
     padding: 20px 40px;
     font-weight: bold;
     font-size: 20px;
-    border: 2px solid #804080;
-    background: #804080;
+    border: 2px solid #c080c0;
+    background: #c080c0;
     color: #fff;
     border-radius: 100vh;
     transition: 0.5s;
@@ -113,6 +115,59 @@
   }
 
   .question-submit-btn:hover {
-    color: #804080;
+    color: #c080c0;
     background: #fff;
+  }
+
+  .question_form_btn {
+    display: block;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px auto 0;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #c080c0;
+    background: #c080c0;
+    color: #fff;
+    border-radius: 100vh;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .question_form_btn:hover {
+    color: #c080c0;
+    background: #fff;
+  }
+
+  .question_comments{
+    padding-top: 20px;
+    border-top: 2px solid #c080c0;
+}
+
+  /* 詳細ページのみのヘッダー */
+
+.question-edit-btn {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+  
+  .question-destroy {
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+    display: block;
+  }
+
+  .question-edit-btn:hover,
+  .question-destroy:hover{
+    border-bottom: solid 2px #c080c0;
+    color: #c080c0;
   }

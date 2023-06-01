@@ -10,8 +10,8 @@
     <ul class='header-right'>
       <% if user_signed_in? %>
             <% if current_user.id == @share.user_id %>
-                <%= link_to "投稿内容の編集", edit_share_path(@share.id), method: :get, class: "share-edit-btn" %>
-                <%= link_to "投稿内容の削除", share_path(@share.id), method: :delete, class:"share-destroy" %>
+                <li><%= link_to "投稿内容の編集", edit_share_path(@share.id), method: :get, class: "share-edit-btn" %></li>
+                <li><%= link_to "投稿内容の削除", share_path(@share.id), method: :delete, class:"share-destroy" %></li>
             <% else %>
                 <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
                 <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
