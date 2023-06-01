@@ -67,7 +67,7 @@
       <h2 class='title'>質問掲示板投稿一覧</h2>
         <% @questions.each do |question| %>
           <div class="card">
-            <div class="card_body">
+            <div class="question_card_body">
               <%= link_to question.title, question_path(question.id), class: :card_title %>
               <p class="card_body_category">
                 <%=question.category.name %>

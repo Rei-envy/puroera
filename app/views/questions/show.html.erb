@@ -1,38 +1,145 @@
-<%= @question.title %>
-<%= @question.category.name %>
-<%= @question.hypothesis %>
-<%= @question.action %>
-<%= @question.thought %>
-<%= @question.user.nickname %>
-
- <% if user_signed_in? %>
-    <% if current_user.id == @question.user_id %>
-        <%= link_to "投稿内容の編集", edit_question_path(@question.id), method: :get, class: "item-red-btn" %>
-        <p class="or-text">or</p>
-        <%= link_to "投稿内容の削除", question_path(@question.id), method: :delete, class:"item-destroy" %>
-    <% end %>
-<% end %>
-
-<div class="prototype__comments">
-    <% if user_signed_in? %>
-        <%= form_with model: [@question, @answer], local: true do |f|%>
-        <div class="field">
-            <%= f.label :answer, "回答" %> <br />
-            <%= f.text_field :answer, id:"comment_comment" %>
-        </div>
-        <div class="actions">
-            <%= f.submit "送信する", class: :form__btn  %>
-        </div>
-        <% end %>
-    <% end %>
-    <ul class="comments_lists">
-        <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-        <li class="comments_list">
-            <% @answers.each do |answer| %>
-                <%= answer.answer %>
-                <%= link_to answer.user.nickname, user_path(answer.user_id), class: :comment_user %><br />
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+            <% if current_user.id == @question.user_id %>
+                <li><%= link_to "質問内容の編集", edit_question_path(@question.id), method: :get, class: "question-edit-btn" %></li>
+                <li><%= link_to "質問内容の削除", question_path(@question.id), method: :delete, class:"question-destroy" %></li>
+            <% else %>
+                <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
+                <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
             <% end %>
-        </li>
-        <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
     </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "current_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
+<div class='share-show-main'>
+  <div class='share-show-white'>
+    <div class='share-show-user'>
+        <div>
+            <%= link_to user_path(@question.user.id) do%>
+                <%= image_tag @question.user.image, class:"share-show-image" %>
+            <% end %>
+        </div>
+        <div>
+            <%= @question.user.nickname %><br>
+            <%= l @question.created_at %>
+        </div>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'title.png', class:'share-post-image' %>
+        <h2 class='title'>質問したいエラーのタイトル</h2>
+      </div>
+      <div class="share-post-content">
+        <%= @question.title %>
+      </div>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'options-lines.png', class:'share-post-image' %>
+        <h2 class='title'>エラーのカテゴリー</h2>
+      </div>
+      <div class="share-post-content">
+        <%= @question.category.name %>
+      </div>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'hypothesis.png', class:'share-post-image' %>
+        <h2 class='title'>エラーが起きた状況と仮説</h2>
+      </div>
+      <div class="share-post-content">
+        <%= @question.hypothesis %>
+      </div>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'solution.png', class:'share-post-image' %>
+        <h2 class='title'>エラー解決のためにやってみたこと</h2>
+      </div>
+      <div class="share-post-content">
+        <%= @question.action %>
+      </div>
+    </div>
+    <div class="share-post-group">
+      <div class="share-post-flex">
+        <%= image_tag 'thought-bubble.png', class:'share-post-image' %>
+        <h2 class='title'>感想</h2>
+      </div>
+      <div class="share-post-content">
+        <%= @question.thought %>
+      </div>
+    </div>
+    <div class="question_comments">
+        <% if user_signed_in? %>
+            <%= form_with model: [@question, @answer], local: true do |f|%>
+            <div class="comment-post">
+                <div class="share-post-group">
+                    <div class="share-post-flex">
+                        <%= image_tag 'qa.png', class:'share-post-image' %>
+                        <h2 class='title'>回答</h2>
+                    </div>
+                    <div class="share-post-content">
+                        <%= f.text_field :answer,placeholder: "例：こうすればうまくいくと思います。", id:"comment_comment",class:"share-post-field" %>
+                    </div>
+                </div>
+                <div class="actions">
+                    <%= f.submit "回答する", class:"question_form_btn"  %>
+                </div>
+            </div>
+            <% end %>
+        <% end %>
+        <ul class="comments_lists">
+            <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+                <% @answers.each do |answer| %>
+                <li class="comments_list">
+                    <div class="comment-flex">
+                        <div>
+                            <%= link_to user_path(answer.user_id) do %>
+                                <%= image_tag answer.user.image, class:"comment_user" %>  
+                            <% end %>     
+                        </div>
+                        <div>
+                            <%= answer.user.nickname %>       
+                        </div>
+                    </div>
+                        <div>
+                            <%= answer.answer %>
+                        </div>
+                        <div>
+                            <%= l answer.created_at %>
+                        </div>
+                </li>
+                <% end %>
+            <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+    </div>
+  </div>
 </div>
+
+<%# 上部の実装後に入れる %>
+<%= render "shared/footer" %>
