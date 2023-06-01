@@ -1,0 +1,64 @@
+.share-post-main{
+    padding: 5vh 15vw;
+    background-color: #f8f8f8;
+}
+
+.share-post-group{
+    margin-bottom: 3vh;
+}
+
+.share-post-flex{
+    display: flex;
+}
+
+.share-post-image{
+    width: 3vw;
+    margin-right: 1vw;
+}
+
+.share-post-flex>.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.share-post-field{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 2vw;
+}
+
+.select-box{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 2vw;
+}
+
+.share-post-area{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 1vh 2vw;
+}
+
+.share-submit-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    color: #fff;
+    border-radius: 100vh;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .share-submit-btn:hover {
+    color: #27acd9;
+    background: #fff;
+  }
