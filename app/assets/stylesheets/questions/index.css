@@ -1,0 +1,95 @@
+.question-title-contents {
+    width: 100vw;
+    height: 50vh;
+    background-image:url('errorshare2.png');
+    opacity: 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5vh 8vw;
+    color: black;
+  }
+
+  .question-btn-border {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-weight: bold;
+    font-size: 25px;
+    border: 2px solid #804080;
+    background: #804080;
+    color: #fff;
+    border-radius: 100vh;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .question-btn-border:hover {
+    color: #804080;
+    background: #fff;
+  }
+
+  .question-service-contents{
+    text-shadow: 0 0 5px rgba(128,64,128, 0.9);
+  }
+  
+  .question-service-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  .question-service-explain {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    text-shadow: 0 0 5px rgba(128,64,128, 0.9);
+  }
+
+  .share-board-main>.question-title {
+    text-align: center;
+    font-size: 3.5vh;
+    font-weight: bold;
+    margin-bottom: 5vh;
+    position: relative;
+  }
+
+  .share-board-main>.question-title::after {
+    content: '';
+    width: 150px;
+    height: 4px;
+    background-color: #804080;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .question-board-article{
+    width: 90%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #804080;
+    background-color: white;
+  }
+
+  .board-category>.question-title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #804080;
+  }
+
+  .board-user>.question-title{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #804080;
+  }

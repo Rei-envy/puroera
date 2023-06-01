@@ -66,12 +66,22 @@
       margin-top: 20px;
   }
   
-  .mypage-share-post>.title::after,
-  .mypage-question-post>.title::after {
+  .mypage-share-post>.title::after{
     content: '';
     width: 150px;
     height: 4px;
     background-color: #27acd9;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mypage-question-post>.title::after {
+    content: '';
+    width: 150px;
+    height: 4px;
+    background-color: #804080;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -84,6 +94,14 @@
     border-radius: 10px;
     background-color: white;
     border: 1px solid #27acd9;
+}
+
+.question_card_body{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #804080;
 }
 
 .card_title{
