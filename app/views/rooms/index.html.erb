@@ -33,6 +33,19 @@
 </header>
 <div class='wrapper'>
   <div class='side-bar'>
-    <%= render "messages/side_bar" %>
+    <div class="chat-messages">
+    <div class="chat-user-time">
+        <div class="chat-user">
+            <%= message.user.nickname %>
+        </div>
+        <div class="chat-time">
+            <%= l message.created_at %>
+        </div>
+    </div>
+    <div class="chat-message">
+        <%= message.content %>
+    </div>
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+</div>
   </div>
 </div>
