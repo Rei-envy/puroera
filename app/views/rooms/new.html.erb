@@ -33,6 +33,7 @@
     <h1 class="title">新規チャットルーム作成</h1>
     <%=form_with model: @room, local: true do |f|%>
       <div class="room-form-group">
+      <%= render 'shared/error_messages', model: f.object %>
         <div class='room-form-input-text'>
           <%= image_tag 'chat-box.png', class:"room-form-input-image" %>
           <%= f.text_field :name, class:"room-input-default", id:"nickname", placeholder:"チャット相手の名前と自分の名前（推奨）", maxlength:"40" %>

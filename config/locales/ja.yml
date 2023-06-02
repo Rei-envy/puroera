@@ -1,6 +1,18 @@
 ---
 ja:
   activerecord:
+    attributes:
+      share:
+        title: タイトル
+        guess: エラーが起きた状況と仮説
+        solution: エラーの解決方法
+        category_id: カテゴリー
+      question:
+        title: タイトル
+        hypothesis: エラーが起きた状況と仮説
+        category_id: カテゴリー
+      room:
+        name: ルームネーム
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
