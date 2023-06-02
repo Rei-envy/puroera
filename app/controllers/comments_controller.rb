@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       @share = @comment.share
       @comments = @share.comments
-      render 'share/show'
+      render 'shares/show'
     end
   end
 

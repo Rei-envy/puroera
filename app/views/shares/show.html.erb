@@ -95,6 +95,7 @@
     <div class="share_comments">
         <% if user_signed_in? %>
             <%= form_with model: [@share, @comment], local: true do |f|%>
+            <%= render 'shared/error_messages', model: f.object %>
             <div class="comment-post">
                 <div class="share-post-group">
                     <div class="share-post-flex">

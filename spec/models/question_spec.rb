@@ -25,22 +25,22 @@ RSpec.describe Question, type: :model do
       it 'titleが空では登録できない' do
         @question.title = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include "Title can't be blank"
+        expect(@question.errors.full_messages).to include "タイトルを入力してください"
       end
       it 'category_idが1では登録できない' do
         @question.category_id = 1
         @question.valid?
-        expect(@question.errors.full_messages).to include 'Category must be other than 1'
+        expect(@question.errors.full_messages).to include 'カテゴリーは1以外の値にしてください'
       end
       it 'hypothesisが空では登録できない' do
         @question.hypothesis = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include "Hypothesis can't be blank"
+        expect(@question.errors.full_messages).to include "エラーが起きた状況と仮説を入力してください"
       end
       it 'ユーザー情報がない場合は登録できない' do
         @question.user = nil
         @question.valid?
-        expect(@question.errors.full_messages).to include 'User must exist'
+        expect(@question.errors.full_messages).to include 'ユーザー情報を入力してください'
       end
     end
   end
