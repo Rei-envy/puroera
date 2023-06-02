@@ -16,7 +16,7 @@
          count_10 = 0
          count_11 = 0
       %>
-      <% if @share == nil %>
+      <% if @shares == [] %>
         <h1 class="no-search">検索結果はありませんでした</h1>
       <% end %>
       <% @shares.each do |share| %>
