@@ -24,6 +24,11 @@ class SharesController < ApplicationController
     @comments = @share.comments
   end
 
+  def search
+    @shares = Share.search(params[:keyword])
+    @users = User.order('created_at ASC')
+  end
+
   def edit
     @share = Share.find(params[:id])
   end

@@ -270,3 +270,12 @@ a {
     margin-right: 10px;
     line-height: 30px;
   }
+
+  /* 検索結果がなかった時 */
+
+  .no-search{
+    margin-top: 5vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+  }
