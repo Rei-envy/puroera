@@ -52,6 +52,9 @@
   <%# 共有掲示板一覧表示をさせる部分 %>
   <div class='share-board-main'>
     <h2 class='title'>共有掲示板</h2>
+    <% if @shares == [] %>
+          <h1 class="no-post-title">投稿はありません</h1>
+    <% end %>
     <div class='share-board-body'>
       <div class='share-board-left'>
       <%  count_2 = 0
@@ -66,9 +69,6 @@
          count_11 = 0
       %>
       <% @shares.each do |share| %>
-      <% if @shares == [] %>
-          <h1 class="no-post-title">投稿はありません</h1>
-      <% end %>
           <div class='share-board-article'>
             <div class='share-board-title'>
               <%= link_to share.title, share_path(share.id)  %>
