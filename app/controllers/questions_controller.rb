@@ -24,6 +24,11 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
   end
 
+  def search
+    @questions = Question.search(params[:keyword])
+    @users = User.order('created_at ASC')
+  end
+
   def edit
     @question = Question.find(params[:id])
   end
