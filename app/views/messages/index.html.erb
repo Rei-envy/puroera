@@ -1,8 +1,80 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to "チャットを作成する", new_room_path, class: "new-chat" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
 <div class="wrapper">
   <div class="side-bar">
-    <%= render "side_bar" %>
+    <div class="side">
+      <div class="side-top">
+        チャットリスト
+      </div>
+      <div class="side-main">
+          <% current_user.rooms.each do |room| %>
+            <div class="room">
+                <% if room.id == @room.id %>
+                  <div class="current-room">
+                    <%= link_to room.name, room_messages_path(room) %>
+                  </div>
+                <% else %>
+                  <div class="side-room">
+                    <%= link_to room.name, room_messages_path(room) %>
+                  </div>
+                <% end %>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
   <div class="main-chat">
-    <%= render "main_chat" %>
+    <div class="chat">
+    <div class="chat-top">
+        <div class="chat-group">
+            <%= @room.name %>
+        </div>
+        <div class="chat-end">
+            <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+        </div>
+    </div>
+    <div class="chat-middle">
+        <%= render partial: 'message', collection: @messages %>
+    </div>
+    <div class="chat-bottom">
+        <%= form_with model: [@room, @message], class: 'message-form', local: true do |f| %>
+            <div class="message-form-input">
+                <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力' %>
+            </div>
+            <%= f.submit '送信', class: 'message-form-submit' %>
+        <% end %>
+    </div>
+  </div>
   </div>
 </div>
