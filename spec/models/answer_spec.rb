@@ -18,17 +18,17 @@ RSpec.describe Answer, type: :model do
       it 'answerが空では登録できない' do
         @answer.answer = ''
         @answer.valid?
-        expect(@answer.errors.full_messages).to include "Answer can't be blank"
+        expect(@answer.errors.full_messages).to include "回答を入力してください"
       end
       it 'ユーザー情報がない場合は登録できない' do
         @answer.user = nil
         @answer.valid?
-        expect(@answer.errors.full_messages).to include 'User must exist'
+        expect(@answer.errors.full_messages).to include 'ユーザー情報を入力してください'
       end
       it '投稿の情報がない場合は登録できない' do
         @answer.question = nil
         @answer.valid?
-        expect(@answer.errors.full_messages).to include 'Question must exist'
+        expect(@answer.errors.full_messages).to include '質問情報を入力してください'
       end
     end
   end

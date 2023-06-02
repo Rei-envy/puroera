@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :update, :edit, :destroy]
+  before_action :set_question, only: [:show, :edit, :update]
+
   def index
     @questions = Question.order('created_at DESC')
     @users = User.order('created_at ASC')
@@ -19,7 +21,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = @question.answers
   end
@@ -30,11 +31,9 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(params[:id])
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update(question_params)
       redirect_to question_path(@question.id)
     else
@@ -52,5 +51,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:title, :category_id, :hypothesis, :action, :thought).merge(user_id: current_user.id)
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
   end
 end

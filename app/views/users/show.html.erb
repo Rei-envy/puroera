@@ -24,29 +24,35 @@
       <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
       <% if user_signed_in? %>
         <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+        <% if current_user.id == @user.id %>
         <li><%= link_to 'マイページ', user_path(current_user.id), class: "current_view" %></li>
+        <% else %>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>
 </header>
 
 <div class="mypage-body">
-  <div class="mypage-left">
-    <div class="mypage-profile">
-      <%= image_tag @user.image, class:"mypage-image" %>
-      <div class="mypage-nickname">
-        <%= @user.nickname %>
-      </div>
-      <%# 投稿数などの情報を入れたい %>
-      <div class='chatroom-btn'>
-        <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
-      </div>
-    </div>
-  </div>
   <div class="mypage-right">
   <%# コメントや回答したものも入れれたら入れたい %>
     <div class="mypage-share-post">
       <h2 class='title'>共有掲示板投稿一覧</h2>
+      <%  count_2 = 0
+          count_3 = 0
+          count_4 = 0
+          count_5 = 0 
+          count_6 = 0
+          count_7 = 0
+          count_8 = 0
+          count_9 = 0
+         count_10 = 0
+         count_11 = 0
+      %>
+      <% if @shares == [] %>
+          <h1 class="no-post-title">投稿はありません</h1>
+      <% end %>
       <% @shares.each do |share| %>
         <div class="card">
           <div class="card_body">
@@ -59,10 +65,36 @@
             </p> 
           </div>
         </div>
+        <%  case share.category.id  
+              when 2
+                count_2 = count_2 + 1
+              when 3
+                count_3 = count_3 + 1
+              when 4
+                count_4 = count_4 + 1
+              when 5
+                count_5 = count_5 + 1
+              when 6
+                count_6 = count_6 + 1
+              when 7
+                count_7 = count_7 + 1
+              when 8
+                count_8 = count_8 + 1
+              when 9
+                count_9 = count_9 + 1
+              when 10
+                count_10 = count_10 + 1
+              when 11
+                count_11 = count_11 + 1
+              end
+          %> 
       <% end %>
     </div>
     <div class="mypage-question-post">
       <h2 class='title'>質問掲示板投稿一覧</h2>
+      <% if @questions == [] %>
+          <h1 class="no-post-title">投稿はありません</h1>
+      <% end %>
         <% @questions.each do |question| %>
           <div class="card">
             <div class="question_card_body">
@@ -75,8 +107,121 @@
               </p> 
             </div>
           </div>
+          <%  case question.category.id  
+              when 2
+                count_2 = count_2 + 1
+              when 3
+                count_3 = count_3 + 1
+              when 4
+                count_4 = count_4 + 1
+              when 5
+                count_5 = count_5 + 1
+              when 6
+                count_6 = count_6 + 1
+              when 7
+                count_7 = count_7 + 1
+              when 8
+                count_8 = count_8 + 1
+              when 9
+                count_9 = count_9 + 1
+              when 10
+                count_10 = count_10 + 1
+              when 11
+                count_11 = count_11 + 1
+              end
+          %> 
         <% end %>
     </div>
     <div class="mypage-question-post"></div>
   </div>
+  <div class="mypage-left">
+    <div class="mypage-profile">
+      <%= image_tag @user.image, class:"mypage-image" %>
+      <div class="mypage-nickname">
+        <%= @user.nickname %>
+      </div>
+      <div class='board-category'>
+          <h2 class='title'>カテゴリー</h2>
+          <ul>
+            <li class='category-number'>
+              <%= image_tag 'coding.png', class:'category-image' %>
+              <span class='category-name'>HTML/CSS</span>
+              <div class="category-post-number">
+                <%= count_2 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'ruby.png', class:'category-image' %>
+              <span class='category-name'>Ruby</span>
+              <div class="category-post-number">
+                <%= count_3 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'js.png', class:'category-image' %>
+              <span class='category-name'>JavaScript</span>
+              <div class="category-post-number">
+                <%= count_4 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'php.png', class:'category-image' %>
+              <span class='category-name'>PHP</span>
+              <div class="category-post-number">
+                <%= count_5 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'python.png', class:'category-image' %>
+              <span class='category-name'>Python</span>
+              <div class="category-post-number">
+                <%= count_6 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'java.png', class:'category-image' %>
+              <span class='category-name'>Java</span>
+              <div class="category-post-number">
+                <%= count_7 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-.png', class:'category-image' %>
+              <span class='category-name'>C++</span>
+              <div class="category-post-number">
+                <%= count_8 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'c-sharp.png', class:'category-image' %>
+              <span class='category-name'>C#</span>
+              <div class="category-post-number">
+                <%= count_9 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'letter-c.png', class:'category-image' %>
+              <span class='category-name'>C言語</span>
+              <div class="category-post-number">
+                <%= count_10 %>投稿
+              </div>
+            </li>
+            <li class='category-number'>
+              <%= image_tag 'code.png', class:'category-image' %>
+              <span class='category-name'>その他</span>
+              <div class="category-post-number">
+                <%= count_11 %>投稿
+              </div>
+            </li>
+          </ul>
+        </div>
+      <%# 投稿数などの情報を入れたい %>
+      <div class='chatroom-btn'>
+        <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<%# 上部の実装後に入れる %>
+<%= render "shared/footer" %>

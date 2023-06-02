@@ -18,17 +18,17 @@ RSpec.describe Comment, type: :model do
       it 'commentが空では登録できない' do
         @comment.comment = ''
         @comment.valid?
-        expect(@comment.errors.full_messages).to include "Comment can't be blank"
+        expect(@comment.errors.full_messages).to include "コメントを入力してください"
       end
       it 'ユーザー情報がない場合は登録できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include 'User must exist'
+        expect(@comment.errors.full_messages).to include 'ユーザー情報を入力してください'
       end
       it '投稿の情報がない場合は登録できない' do
         @comment.share = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include 'Share must exist'
+        expect(@comment.errors.full_messages).to include '投稿情報を入力してください'
       end
     end
   end

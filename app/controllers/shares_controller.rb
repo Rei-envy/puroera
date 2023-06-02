@@ -1,5 +1,7 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :update, :edit, :destroy]
+  before_action :set_share, only: [:show, :edit, :update]
+
   def index
     @shares = Share.order('created_at DESC')
     @users = User.order('created_at ASC')
@@ -19,7 +21,6 @@ class SharesController < ApplicationController
   end
 
   def show
-    @share = Share.find(params[:id])
     @comment = Comment.new
     @comments = @share.comments
   end
@@ -30,11 +31,9 @@ class SharesController < ApplicationController
   end
 
   def edit
-    @share = Share.find(params[:id])
   end
 
   def update
-    @share = Share.find(params[:id])
     if @share.update(share_params)
       redirect_to share_path(@share.id)
     else
@@ -54,8 +53,7 @@ class SharesController < ApplicationController
     params.require(:share).permit(:title, :category_id, :guess, :solution, :thought).merge(user_id: current_user.id)
   end
 
-  # usersテーブルにActiveStorageを使うための
-  # def message_params
-  #     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
-  # end
+  def set_share
+    @share = Share.find(params[:id])
+  end
 end

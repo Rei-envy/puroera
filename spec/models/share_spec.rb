@@ -17,31 +17,31 @@ RSpec.describe Share, type: :model do
       end
     end
 
-    context '商品出品の保存ができない場合' do
+    context '投稿の保存ができない場合' do
       it 'titleが空では登録できない' do
         @share.title = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "Title can't be blank"
+        expect(@share.errors.full_messages).to include "タイトルを入力してください"
       end
       it 'category_idが1では登録できない' do
         @share.category_id = 1
         @share.valid?
-        expect(@share.errors.full_messages).to include 'Category must be other than 1'
+        expect(@share.errors.full_messages).to include 'カテゴリーは1以外の値にしてください'
       end
       it 'guessが空では登録できない' do
         @share.guess = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "Guess can't be blank"
+        expect(@share.errors.full_messages).to include "エラーが起きた状況と仮説を入力してください"
       end
       it 'solutionが空では登録できない' do
         @share.solution = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "Solution can't be blank"
+        expect(@share.errors.full_messages).to include "エラーの解決方法を入力してください"
       end
       it 'ユーザー情報がない場合は登録できない' do
         @share.user = nil
         @share.valid?
-        expect(@share.errors.full_messages).to include 'User must exist'
+        expect(@share.errors.full_messages).to include 'ユーザー情報を入力してください'
       end
     end
   end

@@ -7,8 +7,7 @@
     <% end %>
     <ul class='header-right'>
       <% if user_signed_in? %>
-        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
-        <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
+        <li><%= link_to "チャットを作成する", new_room_path, class: "new-chat" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
       <% else %>
@@ -21,34 +20,11 @@
     <ul class='lists-left'>
       <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
       <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
-      <li><%= link_to 'ユーザーリスト', users_path, class: "current_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
+        <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
         <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
       <% end %>
     </ul>
   </div>
 </header>
-<div class="user-list-body">
-  <h2 class='title'>ユーザーリスト</h2>
-  <% if @users == [] %>
-        <h1 class="no-post-title">ユーザーはいません</h1>
-  <% end %>
-  <ul class='user-lists'>
-    <% @users.each do |user| %>
-      <li class="user-list-card">
-        <%= link_to user_path(user.id) do %>
-          <div class="user-list-block">
-            <%= image_tag user.image, class:"user-list-image" %>
-            <div class="user-list-nickname">
-              <%= user.nickname %>
-            </div>
-          </div> 
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-<%# 上部の実装後に入れる %>
-<%= render "shared/footer" %>
