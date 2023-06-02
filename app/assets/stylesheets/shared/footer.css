@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
   }
   
   .logo-footer {
