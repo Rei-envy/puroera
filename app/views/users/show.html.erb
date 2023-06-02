@@ -50,6 +50,9 @@
          count_10 = 0
          count_11 = 0
       %>
+      <% if @shares == [] %>
+          <h1 class="no-post-title">投稿はありません</h1>
+      <% end %>
       <% @shares.each do |share| %>
         <div class="card">
           <div class="card_body">
@@ -89,6 +92,9 @@
     </div>
     <div class="mypage-question-post">
       <h2 class='title'>質問掲示板投稿一覧</h2>
+      <% if @questions == [] %>
+          <h1 class="no-post-title">投稿はありません</h1>
+      <% end %>
         <% @questions.each do |question| %>
           <div class="card">
             <div class="question_card_body">

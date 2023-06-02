@@ -113,6 +113,12 @@
             <% end %>
         <% end %>
         <ul class="comments_lists">
+          <% if @comments != [] %>
+          <div class="share-post-flex">
+              <%= image_tag 'list.png', class:'share-post-image' %>
+              <h2 class='title'>コメント一覧</h2>
+          </div>
+          <% end %>
             <%# 投稿に紐づくコメントを一覧する処理を記述する %>
                 <% @comments.each do |comment| %>
                 <li class="comments_list">

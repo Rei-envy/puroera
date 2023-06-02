@@ -31,6 +31,9 @@
 </header>
 <div class="user-list-body">
   <h2 class='title'>ユーザーリスト</h2>
+  <% if @users == [] %>
+        <h1 class="no-post-title">ユーザーはいません</h1>
+  <% end %>
   <ul class='user-lists'>
     <% @users.each do |user| %>
       <li class="user-list-card">
