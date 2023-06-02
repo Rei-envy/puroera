@@ -72,9 +72,9 @@
  
   .chat-message{
       font-size: 14px;
+      padding: 0 10px;
       color: #434a54;
       width: 70%;
-      height: 50px;
       line-height: 50px;
       margin-left: 10px;
       border-radius: 10px;
@@ -101,9 +101,9 @@
 
   .current-chat-message{
     font-size: 14px;
+    padding: 0 10px;
     color: #434a54;
     width: 70%;
-    height: 50px;
     line-height: 50px;
     margin-right: 10px;
     border-radius: 10px;
