@@ -1,0 +1,185 @@
+.current-room{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.main-chat{
+    width: 100%;
+    margin-left: 5px;
+  }
+  .chat-top{
+      height: 100px;
+      background-color: #ffffff;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+  }
+ 
+  .chat-group{
+     font-size: 24px;
+     color: #333;
+     margin-top: 36px;
+  }
+ 
+  .chat-end{
+      margin-top: 40px;
+  }
+
+  .chat-end a {
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid darkred;
+    background: white;
+    border-radius: 3px;
+    color: darkred;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .chat-end a:hover{
+    color: #fff;
+    background: darkred;
+  }
+
+  /* メッセージの部分 */
+ 
+  .chat-middle{
+      height: calc(80vh - 100px - 90px);
+      background-color: #fafafa;
+      padding: 40px;
+      overflow: scroll;
+  }
+ 
+  .chat-messages{
+      width: 100%;
+      margin-top: 10px;
+  }
+ 
+  .chat-user-time{
+      display: flex;
+      justify-content: left;
+      align-items: center;
+  }
+
+  .chat-user-image{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      background-color: white;
+  }
+ 
+  .chat-message{
+      font-size: 14px;
+      color: #434a54;
+      width: 70%;
+      height: 50px;
+      line-height: 50px;
+      margin-left: 10px;
+      border-radius: 10px;
+      background-color: white;
+      text-align: center;
+  }
+
+  /* 現在のユーザーは右に表示する */
+
+  .current-chat-user-time{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+  .current-chat-user-image{
+    width: 50px;
+    height: 50px;
+    text-align: right;
+    border-radius: 50%;
+    border: 2px solid #ddeeff;
+    background-color: white;
+}
+
+  .current-chat-message{
+    font-size: 14px;
+    color: #434a54;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #ddeeff;
+    text-align: center;
+}
+  
+  
+  /* チャットボタン */
+
+  .message-form{
+      display: flex;
+      width: 100%;
+  }
+  
+  .chat-bottom{
+      width: 100%;
+      height: 90px;
+      background-color: #DDDDDD;
+      padding: 20px 40px;
+      display: flex;
+  }
+   
+   .message-form-input {
+     background-color: white;
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+   }
+   
+   .form-message {
+     border: none;
+     height: 50px;
+     width: 40vw;
+     padding-left: 10px;
+     border-radius: 3px;
+   }
+
+   .message-form-submit {
+    display: block;
+    margin-left: 15px;
+    padding: 0 20px;
+    margin-left: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    border-radius: 3px;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .message-form-submit:hover {
+    color: #27acd9;
+    background: #fff;
+  }
+   
+   .form-image {
+     font-size: 12px;
+     background-color: lightblue;
+     color: white;
+     padding: 12px;
+     width: 60px;
+     margin: 5px 10px;
+     text-align: center;
+     cursor: pointer;
+   }
+   
+   .hidden {
+     display: none;
+   }
+ 
+   
+   .field_with_errors {
+     display: contents;
+   }

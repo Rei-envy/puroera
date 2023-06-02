@@ -9,8 +9,7 @@
     </form>
     <ul class='header-right'>
       <% if user_signed_in? %>
-        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
-        <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
+        <li><%= link_to "チャットを作成する", new_room_path, class: "new-chat" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
       <% else %>
@@ -33,6 +32,21 @@
 </header>
 <div class='wrapper'>
   <div class='side-bar'>
-    <%= render "messages/side_bar" %>
+    <div class="side">
+      <div class="side-top">
+        チャットリスト
+      </div>
+      <div class="side-main">
+          <% current_user.rooms.each do |room| %>
+            <div class="room">
+                <div class="side-room">
+                  <%= link_to room.name, room_messages_path(room) %>
+                </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="main-chat">
   </div>
 </div>

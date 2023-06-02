@@ -1,35 +1,60 @@
-<div class='chat-room-form'>
-  <h1>新規チャットルーム</h1>
-  <%=form_with model: @room, local: true do |f|%>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :name, :チャットルーム名, class: 'chat-room-form__label'%>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
+    <form class="search-form" action="#">
+        <input class='input-box' placeholder='キーワードから探す'>
+        <button class="search-button">
+            <%= image_tag "search.png", class:"search-icon" %>
+        </button>
+    </form>
+    <ul class='header-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to "チャットを作成する", new_room_path, class: "new-chat" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
+      <li><%= link_to '質問掲示板', questions_path, class: "other_view" %></li>
+      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'マイチャット', rooms_path, class: "current_view" %></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+<div class="chat-room-outside">
+  <div class='chat-room-form'>
+    <h1 class="title">新規チャットルーム作成</h1>
+    <%=form_with model: @room, local: true do |f|%>
+      <div class="room-form-group">
+        <div class='room-form-input-text'>
+          <%= image_tag 'chat-box.png', class:"room-form-input-image" %>
+          <%= f.text_field :name, class:"room-input-default", id:"nickname", placeholder:"チャット相手の名前と自分の名前（推奨）", maxlength:"40" %>
+        </div>
       </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
+      <div class="room-form-group">
+        <div class='room-form-input-text'>
+          <%= image_tag 'internal.png', class:"room-form-input-image" %>
+          <select name="room[user_ids][]">
+            <option value="">チャットするユーザーを選択してください</option>
+            <% User.where.not(id: current_user.id).each do |user| %>
+              <option value=<%= user.id %>><%= user.nickname %></option>
+            <% end %>
+            <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class='chat-room-form__field'>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
+      <div class='chat-room-form__field'>
+          <%= f.submit "ルーム作成する", class: 'chat-room-form-btn'%>
       </div>
-      <div class='chat-room-form__field--right'>
-        <select name="room[user_ids][]">
-          <option value="">チャットするユーザーを選択してください</option>
-          <% User.where.not(id: current_user.id).each do |user| %>
-            <option value=<%= user.id %>><%= user.nickname %></option>
-          <% end %>
-          <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
-        </select>
-      </div>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'></div>
-      <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
