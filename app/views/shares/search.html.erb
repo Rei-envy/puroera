@@ -1,51 +1,8 @@
-<header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= link_to image_tag("puroera_header.png", class:"puroera-icon"), root_path %>
-    <%= form_with(url: search_shares_path, local: true, method: :get, class: "search-form") do |f| %>
-        <%= f.text_field :keyword, placeholder: "質問を検索する", class: "input-box" %>
-        <%= f.submit "検索", class: "search-btn", class:"question-search-icon" %>
-    <% end %>
-    <ul class='header-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to '共有する', new_share_path, class: "share_post" %></li>
-        <li><%= link_to '質問する', new_question_path, class: "question_post" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-        <%# <><%= link_to image_tag(current_user.image, class:"user-nickname") ,user_path(current_user.id) %>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to '共有掲示板', root_path, class: "other_view" %></li>
-      <li><%= link_to '質問掲示板', questions_path, class: "current_view" %></li>
-      <li><%= link_to 'ユーザーリスト', users_path, class: "other_view" %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'マイチャット', rooms_path, class: "other_view" %></li>
-        <li><%= link_to 'マイページ', user_path(current_user.id), class: "other_view" %></li>
-      <% end %>
-    </ul>
-  </div>
-</header>
+<%= render "shared/header" %>
 <div class="main">
-  <div class='question-title-contents'>
-    <div class='question-service-contents'>
-      <h2 class='question-service-title'>
-        プログラミングのエラーを質問しよう
-      </h2>
-    </div>
-    <p class='question-service-explain'>
-        あなたのエラーは誰かが解決してくれる
-      </p>
-    <div class='post-btn'>
-      <%= link_to '今すぐ質問する', new_question_path, class:"btn question-btn-border" %>
-    </div>
-  </div>
-
- <div class='share-board-main'>
-    <h2 class='question-title'>質問掲示板</h2>
+  <%# 共有掲示板一覧表示をさせる部分 %>
+  <div class='share-board-main'>
+    <h2 class='title'>検索結果</h2>
     <div class='share-board-body'>
       <div class='share-board-left'>
       <%  count_2 = 0
@@ -59,31 +16,34 @@
          count_10 = 0
          count_11 = 0
       %>
-      <% @questions.each do |question| %>
-          <div class='question-board-article'>
+      <% if @shares == [] %>
+        <h1 class="no-search">検索結果はありませんでした</h1>
+      <% end %>
+      <% @shares.each do |share| %>
+          <div class='share-board-article'>
             <div class='share-board-title'>
-              <%= link_to question.title, question_path(question.id)  %>
+              <%= link_to share.title, share_path(share.id)  %>
             </div>
             <p class="share-board-category">
-              <%= question.category.name %>
+              <%= share.category.name %>
             </p>
             <div class='share-board-other'>
               <div class='share-board-time'>
-                <%= l question.created_at %>
+                <%= l share.created_at %>
               </div>
               <div class='share-board-author'>
                   <div>
-                    <%= image_tag question.user.image, class:'share-board-author-image' %>
+                    <%= image_tag share.user.image, class:'share-board-author-image' %>
                   </div>
                   <div class='share-board-author-name'>
-                    <%= link_to user_path(question.user.id) do%>
-                      <%= question.user.nickname %>
+                    <%= link_to user_path(share.user.id) do%>
+                      <%= share.user.nickname %>
                     <% end %>
                   </div>
               </div>
             </div>
           </div>
-          <%  case question.category.id  
+          <%  case share.category.id  
               when 2
                 count_2 = count_2 + 1
               when 3
@@ -111,7 +71,7 @@
       <div class='share-board-right'>
       <%# 後でやる %>
         <div class='board-category'>
-          <h2 class='question-title'>カテゴリー</h2>
+          <h2 class='title'>カテゴリー</h2>
           <ul>
             <li class='category-number'>
               <%= image_tag 'coding.png', class:'category-image' %>
@@ -186,7 +146,7 @@
           </ul>
         </div>
         <div class='board-user'>
-          <h2 class='question-title'>ユーザー</h2>
+          <h2 class='title'>ユーザー</h2>
           <ul>
             <% @users.each do |user| %>
             <li class='user-number'>
