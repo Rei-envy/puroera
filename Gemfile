@@ -65,3 +65,4 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'factory_bot_rails'
 gem 'active_hash'
+gem "aws-sdk-s3", require: false
