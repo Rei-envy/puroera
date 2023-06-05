@@ -1,11 +1,11 @@
 class Share < ApplicationRecord
   belongs_to :user
-  has_many :comments,dependent: :destroy
+  has_many :comments, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Share.where('title LIKE(?)', "%#{search}%")
     else
       Share.all

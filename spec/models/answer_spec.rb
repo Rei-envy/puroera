@@ -18,7 +18,7 @@ RSpec.describe Answer, type: :model do
       it 'answerが空では登録できない' do
         @answer.answer = ''
         @answer.valid?
-        expect(@answer.errors.full_messages).to include "回答を入力してください"
+        expect(@answer.errors.full_messages).to include '回答を入力してください'
       end
       it 'ユーザー情報がない場合は登録できない' do
         @answer.user = nil

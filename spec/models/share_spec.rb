@@ -21,7 +21,7 @@ RSpec.describe Share, type: :model do
       it 'titleが空では登録できない' do
         @share.title = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "タイトルを入力してください"
+        expect(@share.errors.full_messages).to include 'タイトルを入力してください'
       end
       it 'category_idが1では登録できない' do
         @share.category_id = 1
@@ -31,12 +31,12 @@ RSpec.describe Share, type: :model do
       it 'guessが空では登録できない' do
         @share.guess = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "エラーが起きた状況と仮説を入力してください"
+        expect(@share.errors.full_messages).to include 'エラーが起きた状況と仮説を入力してください'
       end
       it 'solutionが空では登録できない' do
         @share.solution = ''
         @share.valid?
-        expect(@share.errors.full_messages).to include "エラーの解決方法を入力してください"
+        expect(@share.errors.full_messages).to include 'エラーの解決方法を入力してください'
       end
       it 'ユーザー情報がない場合は登録できない' do
         @share.user = nil

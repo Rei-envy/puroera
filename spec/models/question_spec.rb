@@ -25,7 +25,7 @@ RSpec.describe Question, type: :model do
       it 'titleが空では登録できない' do
         @question.title = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include "タイトルを入力してください"
+        expect(@question.errors.full_messages).to include 'タイトルを入力してください'
       end
       it 'category_idが1では登録できない' do
         @question.category_id = 1
@@ -35,7 +35,7 @@ RSpec.describe Question, type: :model do
       it 'hypothesisが空では登録できない' do
         @question.hypothesis = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include "エラーが起きた状況と仮説を入力してください"
+        expect(@question.errors.full_messages).to include 'エラーが起きた状況と仮説を入力してください'
       end
       it 'ユーザー情報がない場合は登録できない' do
         @question.user = nil

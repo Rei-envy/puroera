@@ -1,11 +1,11 @@
 class Question < ApplicationRecord
   belongs_to :user
-  has_many :answers,dependent: :destroy
+  has_many :answers, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Question.where('title LIKE(?)', "%#{search}%")
     else
       Question.all
