@@ -5,7 +5,6 @@
   .top-page-header {
     width: 100vw;
     padding: 2vh 8vw;
-    /* position: fixed; あとで上部に固定できるようにする*/
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
@@ -182,7 +181,137 @@
     color: white;
   }
   
+  /* レスポンシブ */
+
+  /* タブレット表示時 */
+/* @media (max-width: 1000px) {
   
+} */
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
   
+   
+  .puroera-icon {
+    width: 15vw;
+  }
   
- 
+  .search-form {
+    width: 30vw;
+    height: 20px;
+    display: flex;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  
+  .search-form>.input-box {
+    width: 80%;
+    height: 20px;
+    font-size: 10px;
+    padding-left: 5px;
+  }
+  
+  .search-form>.search-icon {
+    width: 18%;
+    margin-left: 2%;
+    border: 2px solid #16c0de;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #16c0de;
+    color: white;
+    font-size: 5px;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+  .logout {
+    text-decoration: none;
+    color: #333333;
+  }
+
+  .share_post{
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: bold;
+    color: white;
+    display: block;
+  }
+
+  .question_post{
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: block;
+  }
+  
+  .login {
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: block;
+  }
+  
+  .sign-up {
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: block;
+  }
+
+  .logout {
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: block;
+  }
+
+  .question_post:hover,
+  .share_post:hover,
+  .logout:hover,
+  .login:hover,
+  .sign-up:hover{
+    border-bottom: solid 2px white;
+  }
+
+  
+  .nav {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    width: 100%;
+    padding: 1vh 0;
+  }
+  
+  .lists-left {
+    display: flex;
+    min-width: 200px;
+  
+  }
+
+  /* ここは現在の表示ごとに変える */
+
+  .current_view{
+    text-decoration: none;
+    margin-right: 3vw;
+    font-weight: bold;
+    color: white;
+    border-bottom: solid 2px white;
+  }
+
+  .other_view
+   {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 3vw;
+    color: #C0C0C0;
+  }
+}

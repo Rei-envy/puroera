@@ -17,3 +17,33 @@
     font-size: 14px;
     margin-left: 30px;
   }
+
+   /* レスポンシブ */
+
+  /* タブレット表示時 */
+/* @media (max-width: 1000px) {
+  
+} */
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  .footer {
+    width: 100vw;
+    padding: 5vh 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .logo-footer {
+    width: 10vh;
+    vertical-align: bottom;
+  }
+  
+  .right_footer {
+    font-size: 8px;
+    margin-left: 30px;
+  }
+}
