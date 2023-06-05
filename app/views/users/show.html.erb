@@ -216,9 +216,11 @@
           </ul>
         </div>
       <%# 投稿数などの情報を入れたい %>
-      <div class='chatroom-btn'>
-        <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
-      </div>
+      <% if @user.id != current_user.id %>
+        <div class='chatroom-btn'>
+          <%= link_to 'チャットする', new_room_path, class:"chat-btn chat-btn-border" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
