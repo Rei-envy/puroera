@@ -191,7 +191,8 @@ a {
   }
 
   .share-board-author-image{
-    width: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
   }
 
@@ -266,6 +267,7 @@ a {
 
   .user-image-icon{
     width: 30px;
+    height: 30px;
     padding: 3px;
     margin-right: 10px;
     line-height: 30px;
