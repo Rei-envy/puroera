@@ -16,7 +16,7 @@ https://puroera.onrender.com
 ## アカウント1
 ・メールアドレス：rei@rei<br>
 ・パスワード：rei310
-## アカウント2(チャット相手用)
+## アカウント2（チャット相手用）
 ・メールアドレス：yu@yu<br>
 ・パスワード：yu1221
 
@@ -78,23 +78,28 @@ https://puroera.onrender.com
 
 ## コメント機能
 ログイン状態であれば表示され、コメントを入力すると詳細ページに反映されています。<br>
+
 [![Image from Gyazo](https://i.gyazo.com/3a78544e6a4c0fa089a7be49c2da68a8.gif)](https://gyazo.com/3a78544e6a4c0fa089a7be49c2da68a8)
 
 ## エラー質問機能
 内容（タイトル、カテゴリー、状況と仮説、やったこと、感想）を記述することで、質問できるようになり、その内容が質問掲示板ページに反映されています。<br>
+
 [![Image from Gyazo](https://i.gyazo.com/7e28787355dd34b993c092f326d0aac2.gif)](https://gyazo.com/7e28787355dd34b993c092f326d0aac2)
 
 ## 回答機能
 ログイン状態であれば表示され、回答を入力すると詳細ページに反映されています。<br>
+
 [![Image from Gyazo](https://i.gyazo.com/9fd6d453086f6d07f9fa3b2238e3d04e.gif)](https://gyazo.com/9fd6d453086f6d07f9fa3b2238e3d04e)
 
 ## チャットルーム機能
 ### 新規ルーム作成機能
-チャットルーム名とチャット相手を選び、「ルームを作成する」ボタンを押すと、チャットルームが作成されます。
+チャットルーム名とチャット相手を選び、「ルームを作成する」ボタンを押すと、チャットルームが作成されます。<br>
+
 [![Image from Gyazo](https://i.gyazo.com/5d238e8ad36a6d446bd57f74f321acf5.gif)](https://gyazo.com/5d238e8ad36a6d446bd57f74f321acf5)
 
 ### メッセージ投稿機能
 チャットルームの右下で、メッセージを入力し、「送信」ボタンを押すと送信できます。<br>
+
 [![Image from Gyazo](https://i.gyazo.com/9df5f637a984ce5f9ea8037b0a787e6d.gif)](https://gyazo.com/9df5f637a984ce5f9ea8037b0a787e6d)
 
 # 工夫したポイント
