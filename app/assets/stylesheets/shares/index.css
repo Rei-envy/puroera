@@ -30,14 +30,14 @@ a {
   .service-title {
     text-align: center;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 3.5vw;
   }
   
   .service-explain {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 1.8vw;
+    line-height: 2vh;
     text-shadow: 0 0 5px rgba(30,144,255, 0.9);
   }
 
@@ -45,9 +45,9 @@ a {
     display: block;
     text-align: center;
     text-decoration: none;
-    padding: 20px 40px;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     border: 2px solid #27acd9;
     background: #27acd9;
     color: #fff;
@@ -77,8 +77,8 @@ a {
   
   .select-reason-contents>.title::after {
     content: '';
-    width: 150px;
-    height: 4px;
+    width: 8vw;
+    height: 0.5vh;
     background-color: #27acd9;
     position: absolute;
     bottom: -10px;
@@ -108,7 +108,7 @@ a {
   
   .reason-list-text {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.7vw;
     line-height: 50px;
   }
   
@@ -117,7 +117,7 @@ a {
   }
   
   .reason-list-description {
-    font-size: 18px;
+    font-size: 1.2vw;
     margin-top: 20px;
   }
   
@@ -138,8 +138,8 @@ a {
 
   .share-board-main>.title::after {
     content: '';
-    width: 150px;
-    height: 4px;
+    width: 8vw;
+    height: 0.5vh;
     background-color: #27acd9;
     position: absolute;
     bottom: -10px;
@@ -158,8 +158,8 @@ a {
 
   .share-board-article{
     width: 90%;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    padding: 2vh 2vw;
+    margin-bottom: 2vh;
     border-radius: 10px;
     border: 1px solid #27acd9;
     background-color: white;
@@ -169,36 +169,38 @@ a {
   .share-board-title{
     text-decoration: none;
     color: #333;
-    font-size: 20px;
+    font-size: 1.8vw;
     font-weight: bold;
   }
 
   .share-board-category{
-    margin: 5px 0;
+    margin: 1vh 0;
+    font-size: 1vw;
   }
 
   .share-board-other{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1vw;
   }
 
   .share-board-author{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
   }
 
   .share-board-author-image{
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
+    width: 2vw;
+    height: 2vw;
+    margin-right: 1vw;
   }
 
   .share-board-author-name{
     text-decoration: none;
     color: #333;
+    font-size: 1vw;
   }
 
   /* 右側の部分 */
@@ -210,13 +212,16 @@ a {
   .board-category{
     background-color: white;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 0.5vh 1vw;
+    font-size: 1vw;
   }
 
   .board-category>.title{
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.3vw;
+    padding: 1.3vh 0;
+    margin-bottom: 1vh;
     border-bottom: 1px solid #3ccace;
   }
 
@@ -224,19 +229,20 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30px;
+    height: 3vw;
     margin-bottom: 5px;
   }
 
   .category-name{
-    line-height: 40px;
+    line-height: 3vw;
   }
 
   .category-image{
-    width: 30px;
-    padding: 3px;
+    width: 3vw;
+    height: 3vw;
+    padding: 0.3vw;
     margin-right: 10px;
-    line-height: 30px;
+    line-height: 3vw;
   }
 
   /* .category-post-number{
@@ -247,30 +253,34 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30px;
+    height: 3vw;
+    line-height: 3vw;
     margin-bottom: 5px;
   }
 
   .board-user{
     background-color: white;
-    margin-top: 20px;
+    margin-top: 2vh;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 0.5vh 1vw;
+    font-size: 1vw;
   }
 
   .board-user>.title{
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.3vw;
+    padding: 1.3vh 0;
+    margin-bottom: 1vh;
     border-bottom: 1px solid #3ccace;
   }
 
   .user-image-icon{
-    width: 30px;
-    height: 30px;
-    padding: 3px;
+    width: 3vw;
+    height: 3vw;
+    padding: 0.3vw;
     margin-right: 10px;
-    line-height: 30px;
+    line-height: 3vw;
   }
 
   /* 検索結果がなかった時 */
@@ -279,7 +289,7 @@ a {
     margin-top: 5vh;
     text-align: center;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 3vw;
   }
 
 /* レスポンシブ */

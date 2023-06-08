@@ -1,32 +1,33 @@
 .current-room{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.8vw;
 }
 
 .main-chat{
     width: 100%;
-    margin-left: 5px;
+    margin-left: 1vw;
   }
   .chat-top{
-      height: 100px;
+      height: 15vh;
       background-color: #ffffff;
-      padding: 0 40px;
+      padding: 0 2vw;
       display: flex;
       justify-content: space-between;
   }
  
   .chat-group{
-     font-size: 24px;
+     font-size: 2vw;
      color: #333;
-     margin-top: 36px;
+     line-height: 15vh;
   }
  
   .chat-end{
-      margin-top: 40px;
+      line-height: 15vh;
   }
 
   .chat-end a {
-    padding: 20px;
+    font-size: 1.5vw;
+    padding: 2vh 2vw;
     text-align: center;
     text-decoration: none;
     border: 2px solid darkred;
@@ -45,7 +46,7 @@
   /* メッセージの部分 */
  
   .chat-middle{
-      height: calc(80vh - 100px - 90px);
+      height: calc(80vh - 15vh - 10vh);
       background-color: #fafafa;
       padding: 40px;
       overflow: scroll;
@@ -53,7 +54,7 @@
  
   .chat-messages{
       width: 100%;
-      margin-top: 10px;
+      margin-top: 1vh;
   }
  
   .chat-user-time{
@@ -63,20 +64,20 @@
   }
 
   .chat-user-image{
-      width: 50px;
-      height: 50px;
+      width: 3.5vw;
+      height: 3.5vw;
       border-radius: 50%;
       border: 2px solid #ccc;
       background-color: white;
   }
  
   .chat-message{
-      font-size: 14px;
-      padding: 0 10px;
+      font-size: 1vw;
+      padding: 0 1vw;
       color: #434a54;
       width: 70%;
-      line-height: 50px;
-      margin-left: 10px;
+      line-height: 3.5vw;
+      margin-right: 1vw;
       border-radius: 10px;
       background-color: white;
       text-align: center;
@@ -91,8 +92,8 @@
 }
 
   .current-chat-user-image{
-    width: 50px;
-    height: 50px;
+    width: 3.5vw;
+    height: 3.5vw;
     text-align: right;
     border-radius: 50%;
     border: 2px solid #ddeeff;
@@ -100,12 +101,12 @@
 }
 
   .current-chat-message{
-    font-size: 14px;
-    padding: 0 10px;
+    font-size: 1vw;
+    padding: 0 1vw;
     color: #434a54;
     width: 70%;
-    line-height: 50px;
-    margin-right: 10px;
+    line-height: 3.5vw;
+    margin-right: 1vw;
     border-radius: 10px;
     background-color: #ddeeff;
     text-align: center;
@@ -121,9 +122,9 @@
   
   .chat-bottom{
       width: 100%;
-      height: 90px;
+      height: 10vh;
       background-color: white;
-      padding: 20px 40px;
+      padding: 2vh 2vw;
       display: flex;
   }
    
@@ -137,20 +138,22 @@
      border: none;
      border: 1px solid #ccc;
      background: #f9f9f9;
-     height: 50px;
-     width: 80%;
+     height: 6vh;
+     font-size: 1vw;
+     width: 90%;
      padding-left: 5%;
      border-radius: 5px;
-     margin-left: 15%;
+     margin-left: 2.5vw;
    }
 
    .message-form-submit {
     display: block;
-    padding: 0 20px;
+    width: 5vw;
+    padding: 0 1vw;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1vw;
     border: 2px solid #27acd9;
     background: #27acd9;
     border-radius: 3px;

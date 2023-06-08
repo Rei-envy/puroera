@@ -22,7 +22,7 @@
   
   .search-form {
     width: 30vw;
-    height: 40px;
+    height: 5vh;
     display: flex;
     border-radius: 3px;
     margin-bottom: 5px;
@@ -30,12 +30,14 @@
   
   .search-form>.input-box {
     width: 80%;
-    height: 40px;
-    padding-left: 10px;
+    font-size: 1.2vw;
+    height: 5vh;
+    padding-left: 1vw;
   }
   
   .search-form>.search-icon {
     width: 18%;
+    font-size: 1.2vw;
     margin-left: 2%;
     border: 2px solid #16c0de;
     border-radius: 3px;
@@ -74,49 +76,18 @@
     text-decoration: none;
     color: #333333;
   }
-
-  .share_post{
-    text-decoration: none;
-    line-height: 40px;
-    font-weight: bold;
-    color: white;
-    padding: 0 10px;
-    display: block;
-  }
-
-  .question_post{
-    text-decoration: none;
-    line-height: 40px;
-    font-weight: bold;
-    color: white;
-    padding: 0 10px;
-    display: block;
-  }
-  
-  .login {
-    text-decoration: none;
-    line-height: 40px;
-    font-weight: bold;
-    color: white;
-    padding: 0 10px;
-    display: block;
-  }
-  
+ 
+  .share_post,
+  .question_post,
+  .login,
+  .logout,
   .sign-up {
     text-decoration: none;
-    line-height: 40px;
+    line-height: 5vh;
+    font-size: 1.2vw;
     font-weight: bold;
     color: white;
-    padding: 0 10px;
-    display: block;
-  }
-
-  .logout {
-    text-decoration: none;
-    line-height: 40px;
-    font-weight: bold;
-    color: white;
-    padding: 0 10px;
+    padding: 0 0.5vw;
     display: block;
   }
 
@@ -138,12 +109,12 @@
   .logout:hover,
   .login:hover,
   .sign-up:hover{
-    border-bottom: solid 2px white;
+    border-bottom: solid 0.3vh white;
   }
 
   
   .nav {
-    font-size: 18px;
+    font-size: 1.3vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -165,7 +136,7 @@
     font-weight: bold;
     color: white;
     padding-bottom: 2px;
-    border-bottom: solid 2px white;
+    border-bottom: solid 0.3vh white;
   }
 
   .other_view

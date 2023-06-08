@@ -10,7 +10,7 @@
  .second-header {
     width: 100%;
     min-width: 800px;
-    height: 80px;
+    height: 15vh;
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
   }
   
   .second-logo {
-    width: 200px;
+    width: 18vw;
   }
 
   .form-wrap {
@@ -30,22 +30,22 @@
   
   .form-header {
     width: 100%;
-    height: 80px;
+    height: 15vh;
     text-align: center;
     font-size: 22px;
   }
 
   .form-header-text {
-    line-height: 80px;
+    line-height: 15vh;
     border-bottom: 1px solid #f5f5f5;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2.0vw;
     color: #16c0de;
   }
 
   .preview-image{
-    width: 100px;
-    height: 100px;
+    width: 15vw;
+    height: 15vw;
     border-radius: 50%;
     border: 1px solid #ccc;
     background-color: white;
@@ -54,6 +54,7 @@
 
   .img-upload{
     text-align: center;
+    line-height: 3.3vw;
   }
   
   .indispensable{
@@ -69,12 +70,12 @@
     align-items: center;
     border-radius: 4px;
     border: 1px solid #ccc;
-    margin-top: 15px;
+    margin-top: 2.5vh;
   }
 
   .form-input-image{
-    width: 48px;
-    height: 48px;
+    width: 3.3vw;
+    height: 3.3vw;
     padding: 10px;
     opacity: 50%;
     margin: 0 5px;
@@ -82,13 +83,13 @@
 
   .input-default {
     width: 100%;
-    height: 48px;
+    height: 3.3vw;
     padding: 10px 16px 8px;
     border-radius: 0 4px 4px 0;
     border: none;
     border-left: 1px solid #ccc;
     background: #f9f9f9;
-    font-size: 16px;
+    font-size: 1.3vw;
     resize: none;
   }
   
@@ -143,7 +144,7 @@
   
   .register-btn {
     width: 50%;
-    margin: 30px auto 0;
+    margin: 8vh auto 0;
   }
   
   .register-blue-btn {
@@ -151,9 +152,9 @@
     width: 100%;
     text-align: center;
     text-decoration: none;
-    padding: 20px 40px;
+    padding: 2.5vh 3vw;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.8vw;
     border: 2px solid #27acd9;
     background: #27acd9;
     color: #fff;
@@ -176,8 +177,9 @@
 
   .already-get-text{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 3vh;
     color: #333;
+    font-size: 1.2vw;
   }
 
 

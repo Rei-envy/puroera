@@ -20,9 +20,9 @@
     display: block;
     text-align: center;
     text-decoration: none;
-    padding: 20px 40px;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     border: 2px solid #c080c0;
     background: #c080c0;
     color: #fff;
@@ -43,14 +43,14 @@
   .question-service-title {
     text-align: center;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 3.5vw;
   }
   
   .question-service-explain {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 1.8vw;
+    line-height: 2vh;
     text-shadow: 0 0 5px rgba(192,128,192, 0.9);
   }
 
@@ -64,8 +64,8 @@
 
   .share-board-main>.question-title::after {
     content: '';
-    width: 150px;
-    height: 4px;
+    width: 8vw;
+    height: 0.5vh;
     background-color: #c080c0;
     position: absolute;
     bottom: -10px;
@@ -75,8 +75,8 @@
 
   .question-board-article{
     width: 90%;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    padding: 2vh 2vw;
+    margin-bottom: 2vh;
     border-radius: 10px;
     border: 1px solid #c080c0;
     background-color: white;
@@ -102,10 +102,10 @@
     width: 50%;
     text-align: center;
     text-decoration: none;
-    margin: 30px auto 0;
-    padding: 20px 40px;
+    margin: 2vh auto 0;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     border: 2px solid #c080c0;
     background: #c080c0;
     color: #fff;
@@ -124,10 +124,10 @@
     width: 50%;
     text-align: center;
     text-decoration: none;
-    margin: 30px auto 0;
-    padding: 20px 40px;
+    margin: 2vh auto 0;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     border: 2px solid #c080c0;
     background: #c080c0;
     color: #fff;
@@ -143,6 +143,7 @@
 
   .question_comments{
     padding-top: 20px;
+    font-size: 1vw;
     border-top: 2px solid #c080c0;
 }
 
@@ -150,7 +151,8 @@
 
 .question-edit-btn {
     text-decoration: none;
-    line-height: 40px;
+    line-height: 5vh;
+    font-size: 1.2vw;
     font-weight: bold;
     color: white;
     padding: 0 10px;
@@ -159,7 +161,8 @@
   
   .question-destroy {
     text-decoration: none;
-    line-height: 40px;
+    line-height: 5vh;
+    font-size: 1.2vw;
     font-weight: bold;
     color: white;
     padding: 0 10px;
@@ -168,13 +171,14 @@
 
   .question-edit-btn:hover,
   .question-destroy:hover{
-    border-bottom: solid 2px #c080c0;
+    border-bottom: solid 0.3vh #c080c0;
     color: #c080c0;
   }
 
   /* 検索時のボタン */
   .search-form>.question-search-icon {
     width: 18%;
+    font-size: 1.2vw;
     margin-left: 2%;
     border: 2px solid #c080c0;
     border-radius: 3px;
@@ -242,14 +246,14 @@
   .question-service-title {
     text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 3.5vw;
   }
   
   .question-service-explain {
     text-align: center;
     font-weight: bold;
-    font-size: 10px;
-    line-height: 40px;
+    font-size: 1.8vw;
+    line-height: 2vh;
     text-shadow: 0 0 5px rgba(192,128,192, 0.9);
   }
 

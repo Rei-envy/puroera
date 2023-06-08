@@ -13,33 +13,39 @@
 
 .share-post-image{
     width: 2.5vw;
+    height: 2.5vw;
     margin-right: 1vw;
 }
 
 .share-post-flex>.title{
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: bold;
+    height: 2.5vw;
+    line-height: 2.5vw;
 }
 
 .share-post-field{
     width: 100%;
-    height: 50px;
-    margin-top: 10px;
+    height: 10vh;
+    margin-top: 2vh;
     padding-left: 2vw;
+    font-size: 1.0vw;
 }
 
 .select-box{
     width: 100%;
-    height: 50px;
-    margin-top: 10px;
+    height: 10vh;
+    margin-top: 2vh;
     padding-left: 2vw;
+    font-size: 1.0vw;
 }
 
 .share-post-area{
     width: 100%;
-    height: 100px;
-    margin-top: 10px;
+    height: 10vh;
+    margin-top: 2vh;
     padding: 1vh 2vw;
+    font-size: 1.0vw;
 }
 
 .share-submit-btn {
@@ -47,10 +53,10 @@
     width: 50%;
     text-align: center;
     text-decoration: none;
-    margin: 30px auto 0;
-    padding: 20px 40px;
+    margin: 2vh auto 0;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     border: 2px solid #27acd9;
     background: #27acd9;
     color: #fff;

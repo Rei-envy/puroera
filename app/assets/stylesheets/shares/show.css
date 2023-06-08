@@ -12,12 +12,13 @@
 .share-show-user{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 2vh;
+    font-size: 1vw;
 }
 
 .share-show-image{
-    width: 100px;
-    height: 100px;
+    width: 3.5vw;
+    height: 3.5vw;
     margin-right: 3vw;
     border-radius: 50%;
     border: 2px solid #ccc;
@@ -26,6 +27,7 @@
 
 .share_comments{
     padding-top: 20px;
+    font-size: 1vw;
     border-top: 2px solid #27acd9;
 }
 
@@ -41,8 +43,8 @@
 }
 
 .comment_user{
-    width: 50px;
-    height: 50px;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 50%;
     border: 1px solid #ccc;
     background-color: white;
@@ -51,6 +53,7 @@
 
 .share-post-content{
     margin-top: 10px;
+    font-size: 1vw;
 }
 
 .form_btn {
@@ -58,10 +61,10 @@
     width: 50%;
     text-align: center;
     text-decoration: none;
-    margin: 30px auto 0;
-    padding: 20px 40px;
+    margin: 2vh auto 0;
+    padding: 2vh 2vw;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     border: 2px solid #27acd9;
     background: #27acd9;
     color: #fff;
@@ -79,25 +82,27 @@
 
 .share-edit-btn {
     text-decoration: none;
-    line-height: 40px;
+    line-height: 5vh;
+    font-size: 1.2vw;
     font-weight: bold;
     color: white;
-    padding: 0 10px;
+    padding: 0 0.5vw;
     display: block;
   }
   
   .share-destroy {
     text-decoration: none;
-    line-height: 40px;
+    line-height: 5vh;
+    font-size: 1.2vw;
     font-weight: bold;
     color: white;
-    padding: 0 10px;
+    padding: 0 0.5vw;
     display: block;
   }
 
   .share-edit-btn:hover,
   .share-destroy:hover{
-    border-bottom: solid 2px #27acd9;
+    border-bottom: solid 0.3vh #27acd9;
     color: #27acd9;
   }
 
