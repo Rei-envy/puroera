@@ -76,7 +76,7 @@
   .form-input-image{
     width: 3.3vw;
     height: 3.3vw;
-    padding: 10px;
+    padding: 0.8vw;
     opacity: 50%;
     margin: 0 5px;
   }
@@ -199,7 +199,7 @@
   }
   
   .second_right_footer {
-    font-size: 14px;
+    font-size: 1vw;
     margin-left: 30px;
     color: #333;
   }
